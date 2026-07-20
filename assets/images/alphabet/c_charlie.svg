@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#2C2C2A"/>
+
+<ellipse cx="205" cy="205" rx="105" ry="18" fill="#111111"/>
+<path d="M140 205 Q140 130 205 130 Q270 130 270 205 Z" fill="#111111"/>
+<rect x="140" y="185" width="130" height="10" fill="#444441"/>
+<path d="M150 285 Q180 265 202 283 Q205 286 208 283 Q230 265 260 285 Q235 305 210 292 Q205 289 200 292 Q175 305 150 285 Z" fill="#111111"/>
+<path d="M175 350 L205 335 L235 350 L205 365 Z" fill="#E24B4A"/>
+<circle cx="205" cy="350" r="7" fill="#A32D2D"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Charlie</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#B4B2A9">C &#183; CHAR-lee</text>
+</svg>

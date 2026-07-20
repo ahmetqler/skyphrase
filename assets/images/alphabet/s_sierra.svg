@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#042C53"/>
+
+<circle cx="320" cy="110" r="24" fill="#F5B942"/>
+<path d="M30 400 L130 210 L215 400 Z" fill="#185FA5"/>
+<path d="M130 210 L112 245 L130 260 L148 245 Z" fill="#FFFFFF"/>
+<path d="M120 400 L240 165 L355 400 Z" fill="#0C447C"/>
+<path d="M240 165 L218 210 L240 228 L262 210 Z" fill="#FFFFFF"/>
+<path d="M255 400 L330 265 L395 400 Z" fill="#185FA5"/>
+<path d="M330 265 L316 292 L330 304 L344 292 Z" fill="#FFFFFF"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Sierra</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#85B7EB">S &#183; see-AIR-rah</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#0F2440"/>
+
+<circle cx="205" cy="235" r="120" fill="#F5EFE0"/>
+<circle cx="205" cy="235" r="120" fill="none" stroke="#F5B942" stroke-width="10"/>
+<path d="M205 130 L205 145 M205 325 L205 340 M100 235 L115 235 M295 235 L310 235" stroke="#0F2440" stroke-width="7" stroke-linecap="round"/>
+<path d="M152 143 L159 156 M258 143 L251 156 M152 327 L159 314 M258 327 L251 314 M113 182 L126 189 M297 182 L284 189 M113 288 L126 281 M297 288 L284 281" stroke="#5F5E5A" stroke-width="4" stroke-linecap="round"/>
+<path d="M205 235 L205 155" stroke="#0F2440" stroke-width="9" stroke-linecap="round"/>
+<path d="M205 235 L258 235" stroke="#0F2440" stroke-width="7" stroke-linecap="round"/>
+<circle cx="205" cy="235" r="9" fill="#D85A30"/>
+<text x="205" y="290" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="700" fill="#0F2440">UTC</text>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Zulu</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8FB8E0">Z &#183; ZOO-loo</text>
+</svg>

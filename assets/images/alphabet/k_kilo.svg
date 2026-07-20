@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#2C2C2A"/>
+
+<path d="M150 210 Q150 130 205 130 Q260 130 260 210" fill="none" stroke="#888780" stroke-width="26" stroke-linecap="round"/>
+<circle cx="205" cy="300" r="105" fill="#5F5E5A"/>
+<circle cx="205" cy="300" r="105" fill="none" stroke="#444441" stroke-width="6"/>
+<text x="205" y="315" text-anchor="middle" font-family="sans-serif" font-size="46" font-weight="700" fill="#F5B942">KG</text>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Kilo</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#B4B2A9">K &#183; KEY-loh</text>
+</svg>

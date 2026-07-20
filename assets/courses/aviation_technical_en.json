@@ -1,0 +1,164 @@
+{
+  "id": "aviation_technical_en",
+  "title": "Technical Aviation English",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Unit 1 · Aircraft Structure Basics",
+      "subtitle": "English terms for the main structural components",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Main Structural Components",
+          "exercises": [
+            { "type": "info", "title": "The main parts of an aircraft", "subtitle": "Terms you'll see in every Aircraft Maintenance Manual (AMM):", "items": [
+              { "k": "Fuselage", "v": "Main body of the aircraft" }, { "k": "Wing", "v": "Provides lift" }, { "k": "Empennage", "v": "Tail assembly" },
+              { "k": "Cockpit", "v": "Flight deck where pilots sit" }, { "k": "Landing gear", "v": "Wheels/struts for takeoff and landing" }
+            ], "note": "These terms appear in English in every maintenance manual." },
+            { "type": "multipleChoice", "prompt": "What is the term for the aircraft's main body?", "options": ["Fuselage", "Wing", "Empennage", "Cockpit"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does Empennage mean?", "options": ["The wing", "The tail assembly", "The landing gear", "The body"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Fuselage", "right": "Main body" }, { "left": "Wing", "right": "Provides lift" },
+              { "left": "Cockpit", "right": "Flight deck" }, { "left": "Landing gear", "right": "Wheels for landing" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is the tail assembly called?", "answers": ["empennage"], "display": "Empennage", "hint": "Tail assembly = ?" },
+            { "type": "listening", "audioText": "Empennage", "options": ["Main body of the aircraft", "Provides lift", "Tail assembly", "Flight deck where pilots sit"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Flight Control Surfaces",
+          "exercises": [
+            { "type": "info", "title": "Control surfaces", "subtitle": "The moving parts that steer the aircraft:", "items": [
+              { "k": "Aileron", "v": "Controls roll" }, { "k": "Elevator", "v": "Controls pitch" },
+              { "k": "Rudder", "v": "Controls yaw" }, { "k": "Flap", "v": "Increases lift at low speed" }
+            ], "note": "These surfaces move using hydraulic or electric systems." },
+            { "type": "multipleChoice", "prompt": "What does the Aileron control?", "options": ["Roll", "Pitch", "Yaw", "Speed"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Which axis does the Rudder control?", "options": ["Roll", "Pitch", "Yaw", "Takeoff"], "correctIndex": 2 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Aileron", "right": "Roll" }, { "left": "Elevator", "right": "Pitch" },
+              { "left": "Rudder", "right": "Yaw" }, { "left": "Flap", "right": "Extra lift" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is the pitch-control surface called?", "answers": ["elevator"], "display": "Elevator", "hint": "Pitch control = ?" },
+            { "type": "listening", "audioText": "Rudder", "options": ["Controls roll", "Controls pitch", "Controls yaw", "Increases lift at low speed"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "Aircraft Systems",
+          "exercises": [
+            { "type": "info", "title": "Core systems", "subtitle": "System names you'll see often in maintenance:", "items": [
+              { "k": "Hydraulic system", "v": "Uses fluid pressure to move parts" }, { "k": "Avionics", "v": "The aircraft's electronic systems" },
+              { "k": "Powerplant", "v": "The engine and its components" }, { "k": "Fuel system", "v": "Stores and delivers fuel" }
+            ]},
+            { "type": "multipleChoice", "prompt": "What does Avionics mean?", "options": ["The engine group", "The electronic systems", "The fuel system", "The hydraulic system"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What does the term Powerplant refer to?", "options": ["The engine group", "The wing", "The tail", "The body"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Hydraulic system", "right": "Fluid pressure" }, { "left": "Avionics", "right": "Electronic systems" },
+              { "left": "Powerplant", "right": "Engine group" }, { "left": "Fuel system", "right": "Stores fuel" }
+            ]},
+            { "type": "wordBank", "prompt": "Put the words in order: Fuel system", "correctOrder": ["Fuel", "system"], "distractors": ["Hydraulic", "Avionics"] },
+            { "type": "listening", "audioText": "Powerplant", "options": ["Uses fluid pressure to move parts", "The aircraft's electronic systems", "The engine and its components", "Stores and delivers fuel"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Maintenance Abbreviations",
+          "exercises": [
+            { "type": "info", "title": "Common abbreviations", "subtitle": "You'll see these everywhere in technical documents:", "items": [
+              { "k": "MEL", "v": "Minimum Equipment List" }, { "k": "AD", "v": "Airworthiness Directive" },
+              { "k": "SB", "v": "Service Bulletin" }, { "k": "NDT", "v": "Non-Destructive Testing" }
+            ], "note": "Documents usually show just the abbreviation — you need to know what it stands for." },
+            { "type": "multipleChoice", "prompt": "What does AD stand for?", "options": ["Airworthiness Directive", "Aircraft Design", "Avionics Data", "Aircraft Delivery"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What is NDT used for?", "options": ["Inspecting a part without damaging it", "Ordering a new part", "Preparing a flight plan", "Measuring fuel"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "MEL", "right": "Minimum Equipment List" }, { "left": "AD", "right": "Airworthiness Directive" },
+              { "left": "SB", "right": "Service Bulletin" }, { "left": "NDT", "right": "Non-Destructive Testing" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is the abbreviation for Service Bulletin?", "answers": ["sb"], "display": "SB", "hint": "Service Bulletin = ?" },
+            { "type": "listening", "audioText": "Airworthiness Directive", "options": ["MEL", "AD", "SB", "NDT"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Unit 2 · Powerplant & Maintenance Practice",
+      "subtitle": "Engine parts, tools, and how maintenance work is documented",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Engine & Powerplant Components",
+          "exercises": [
+            { "type": "info", "title": "Inside a turbine engine", "subtitle": "The main sections air passes through:", "items": [
+              { "k": "Compressor", "v": "Compresses the incoming air" }, { "k": "Combustion chamber", "v": "Where fuel is burned" },
+              { "k": "Turbine", "v": "Extracts energy from the exhaust gas" }, { "k": "Nacelle", "v": "The engine's outer housing" }
+            ], "note": "Air flows through these sections in order: compressor, combustion chamber, turbine." },
+            { "type": "multipleChoice", "prompt": "What does the Compressor do?", "options": ["Compresses the incoming air", "Burns the fuel", "Cools the engine", "Stores fuel"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Where is fuel actually burned?", "options": ["Compressor", "Combustion chamber", "Nacelle", "Turbine"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Compressor", "right": "Compresses air" }, { "left": "Combustion chamber", "right": "Fuel is burned" },
+              { "left": "Turbine", "right": "Extracts energy" }, { "left": "Nacelle", "right": "Engine housing" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is the engine's outer housing called?", "answers": ["nacelle"], "display": "Nacelle", "hint": "Outer housing = ?" },
+            { "type": "listening", "audioText": "Turbine", "options": ["Compresses the incoming air", "Where fuel is burned", "Extracts energy from the exhaust gas", "The engine's outer housing"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "Landing Gear & Brakes",
+          "exercises": [
+            { "type": "info", "title": "Landing gear terms", "subtitle": "Words used for the wheels, legs, and brakes:", "items": [
+              { "k": "Strut", "v": "The main support leg of the landing gear" }, { "k": "Shock absorber", "v": "Cushions the impact of landing" },
+              { "k": "Brake assembly", "v": "Stops the wheel from turning" }, { "k": "Retract", "v": "Pull the gear up into the aircraft" }
+            ], "note": "\"Extend\" is the opposite of \"retract\" — lowering the gear for landing." },
+            { "type": "multipleChoice", "prompt": "What does a Shock absorber do?", "options": ["Cushions the impact of landing", "Stops the wheel", "Steers the nose wheel", "Inflates the tire"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does \"retract\" mean for landing gear?", "options": ["Lower it for landing", "Pull it up into the aircraft", "Inspect it", "Replace it"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Strut", "right": "Main support leg" }, { "left": "Shock absorber", "right": "Cushions landing" },
+              { "left": "Brake assembly", "right": "Stops the wheel" }, { "left": "Retract", "right": "Pull up" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is the main support leg of the landing gear called?", "answers": ["strut"], "display": "Strut", "hint": "Support leg = ?" },
+            { "type": "listening", "audioText": "Retract", "options": ["Cushions the impact of landing", "Stops the wheel from turning", "The main support leg", "Pull the gear up into the aircraft"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u2l3",
+          "title": "Tools & Fasteners",
+          "exercises": [
+            { "type": "info", "title": "Common tools and fasteners", "subtitle": "Words you'll hear on the hangar floor:", "items": [
+              { "k": "Torque wrench", "v": "Tightens a fastener to an exact value" }, { "k": "Rivet", "v": "A permanent metal fastener" },
+              { "k": "Cotter pin", "v": "Locks a nut in place so it can't turn" }, { "k": "Safety wire", "v": "Prevents fasteners from loosening" }
+            ]},
+            { "type": "multipleChoice", "prompt": "What is a Torque wrench used for?", "options": ["Tightening a fastener to an exact value", "Drilling holes", "Measuring fuel", "Cutting metal"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does Safety wire do?", "options": ["Locks a nut in place", "Prevents fasteners from loosening", "Conducts electricity", "Seals a fuel tank"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Torque wrench", "right": "Tightens to exact value" }, { "left": "Rivet", "right": "Permanent fastener" },
+              { "left": "Cotter pin", "right": "Locks a nut" }, { "left": "Safety wire", "right": "Stops loosening" }
+            ]},
+            { "type": "fillBlank", "prompt": "What is a permanent metal fastener called?", "answers": ["rivet"], "display": "Rivet", "hint": "Permanent fastener = ?" },
+            { "type": "listening", "audioText": "Cotter pin", "options": ["Tightens a fastener to an exact value", "A permanent metal fastener", "Locks a nut in place so it can't turn", "Prevents fasteners from loosening"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l4",
+          "title": "Maintenance Documentation & Inspections",
+          "exercises": [
+            { "type": "info", "title": "Paperwork you'll deal with daily", "subtitle": "Key documentation terms:", "items": [
+              { "k": "Work order", "v": "Instructions for a maintenance task" }, { "k": "Logbook", "v": "Records the aircraft's maintenance history" },
+              { "k": "Discrepancy", "v": "A recorded fault or defect" }, { "k": "A-check / C-check", "v": "Scheduled inspection levels" }
+            ], "note": "Every discrepancy must be recorded and signed off before the aircraft can fly again." },
+            { "type": "multipleChoice", "prompt": "What is a Discrepancy?", "options": ["A recorded fault or defect", "A new part order", "A flight plan", "A fuel receipt"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What is a Logbook used for?", "options": ["Recording the aircraft's maintenance history", "Booking flight tickets", "Ordering tools", "Scheduling crew"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Work order", "right": "Task instructions" }, { "left": "Logbook", "right": "Maintenance history" },
+              { "left": "Discrepancy", "right": "Recorded fault" }, { "left": "A-check", "right": "Scheduled inspection" }
+            ]},
+            { "type": "fillBlank", "prompt": "What do you call a recorded fault or defect?", "answers": ["discrepancy"], "display": "Discrepancy", "hint": "Recorded fault = ?" },
+            { "type": "listening", "audioText": "Work order", "options": ["Records the aircraft's maintenance history", "Instructions for a maintenance task", "A recorded fault or defect", "A scheduled inspection level"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

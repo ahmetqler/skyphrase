@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#1A3A61"/>
+
+<path d="M40 400 L140 250 L215 400 Z" fill="#0F2440"/>
+<path d="M170 400 L280 220 L375 400 Z" fill="#153055"/>
+<path d="M280 220 L262 250 L280 262 L298 250 Z" fill="#FFFFFF"/>
+<path d="M140 250 L128 272 L140 282 L152 272 Z" fill="#FFFFFF"/>
+<path d="M105 190 Q135 160 165 190" fill="none" stroke="#F5B942" stroke-width="7" stroke-linecap="round"/>
+<path d="M90 155 Q135 110 180 155" fill="none" stroke="#F5B942" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+<path d="M75 120 Q135 60 195 120" fill="none" stroke="#F5B942" stroke-width="7" stroke-linecap="round" opacity="0.4"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Echo</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8FB8E0">E &#183; ECK-oh</text>
+</svg>

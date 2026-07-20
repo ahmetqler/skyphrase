@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#501313"/>
+
+<path d="M205 400 Q90 310 90 220 Q90 145 155 145 Q195 145 205 190 Q215 145 255 145 Q320 145 320 220 Q320 310 205 400 Z" fill="#E24B4A"/>
+<path d="M110 175 L310 320" stroke="#F5D98F" stroke-width="10" stroke-linecap="round"/>
+<path d="M110 175 L100 150 M110 175 L85 168" stroke="#F5D98F" stroke-width="9" stroke-linecap="round"/>
+<path d="M310 320 L335 328 L322 345 Z" fill="#F5D98F"/>
+<circle cx="150" cy="205" r="18" fill="#F09595" opacity="0.7"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Romeo</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#F7C1C1">R &#183; ROW-me-oh</text>
+</svg>

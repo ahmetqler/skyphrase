@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#26215C"/>
+
+<circle cx="165" cy="145" r="27" fill="#F5EFE0"/>
+<path d="M150 180 L185 180 L200 290 L170 290 L178 385 L158 385 L152 300 L132 385 L112 385 L132 280 Z" fill="#2C2C2A"/>
+<circle cx="262" cy="160" r="25" fill="#F5EFE0"/>
+<path d="M245 193 L280 193 L300 280 Q270 330 300 385 L200 385 Q232 330 218 280 Z" fill="#E24B4A"/>
+<path d="M188 215 Q225 200 248 215" fill="none" stroke="#F5EFE0" stroke-width="9" stroke-linecap="round"/>
+<circle cx="278" cy="140" r="8" fill="#E24B4A"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Tango</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#AFA9EC">T &#183; TANG-go</text>
+</svg>

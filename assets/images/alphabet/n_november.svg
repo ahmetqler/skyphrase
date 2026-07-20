@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#712B13"/>
+
+<path d="M205 110 Q300 170 290 270 Q280 350 205 390 Q130 350 120 270 Q110 170 205 110 Z" fill="#EF9F27"/>
+<path d="M205 130 L205 385" stroke="#993C1D" stroke-width="7" stroke-linecap="round"/>
+<path d="M205 190 L155 230 M205 190 L255 230 M205 255 L150 295 M205 255 L260 295" stroke="#993C1D" stroke-width="6" stroke-linecap="round"/>
+<path d="M205 390 L205 425" stroke="#993C1D" stroke-width="7" stroke-linecap="round"/>
+<path d="M95 120 Q110 105 125 120 Q110 138 95 120 Z" fill="#D85A30"/>
+<path d="M300 90 Q315 75 330 90 Q315 108 300 90 Z" fill="#F5B942"/>
+<path d="M320 340 Q335 325 350 340 Q335 358 320 340 Z" fill="#D85A30"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">November</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#F0B49B">N &#183; no-VEM-ber</text>
+</svg>

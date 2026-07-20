@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#633806"/>
+
+<circle cx="330" cy="105" r="24" fill="#F5B942"/>
+<rect x="120" y="245" width="150" height="90" rx="40" fill="#F5EFE0"/>
+<rect x="245" y="150" width="34" height="130" rx="17" fill="#F5EFE0"/>
+<circle cx="262" cy="145" r="26" fill="#F5EFE0"/>
+<path d="M248 125 L242 100 L256 118 Z" fill="#F5EFE0"/>
+<path d="M276 125 L282 100 L268 118 Z" fill="#F5EFE0"/>
+<circle cx="272" cy="140" r="4" fill="#2A1A0F"/>
+<rect x="135" y="330" width="16" height="70" rx="8" fill="#F5EFE0"/>
+<rect x="170" y="330" width="16" height="70" rx="8" fill="#F5EFE0"/>
+<rect x="215" y="330" width="16" height="70" rx="8" fill="#F5EFE0"/>
+<rect x="248" y="330" width="16" height="70" rx="8" fill="#F5EFE0"/>
+<rect x="150" y="240" width="60" height="60" rx="8" fill="#D85A30"/>
+<rect x="150" y="258" width="60" height="10" fill="#F5B942"/>
+<rect x="150" y="278" width="60" height="10" fill="#5DCAA5"/>
+<path d="M112 268 Q100 275 108 292" fill="none" stroke="#F5EFE0" stroke-width="12" stroke-linecap="round"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Lima</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#FAC775">L &#183; LEE-mah</text>
+</svg>

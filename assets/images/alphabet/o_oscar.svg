@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#2A1A0F"/>
+
+<path d="M120 150 Q205 90 290 150" fill="none" stroke="#F5D98F" stroke-width="4" opacity="0.5"/>
+<circle cx="205" cy="150" r="26" fill="#F5B942"/>
+<path d="M182 185 Q205 175 228 185 L235 300 Q205 315 175 300 Z" fill="#F5B942"/>
+<rect x="196" y="200" width="18" height="80" rx="9" fill="#E09A45"/>
+<rect x="160" y="315" width="90" height="22" rx="6" fill="#E09A45"/>
+<rect x="140" y="337" width="130" height="35" rx="6" fill="#8A5A2B"/>
+<circle cx="115" cy="110" r="4" fill="#F5D98F"/>
+<circle cx="295" cy="110" r="4" fill="#F5D98F"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Oscar</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#EFC06B">O &#183; OSS-cah</text>
+</svg>

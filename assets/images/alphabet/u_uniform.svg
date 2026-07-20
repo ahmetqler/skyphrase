@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#0F2440"/>
+
+<path d="M120 165 L165 135 L205 155 L245 135 L290 165 L300 400 L110 400 Z" fill="#1A3A61"/>
+<path d="M205 155 L170 400 L240 400 Z" fill="#0B1B33"/>
+<path d="M165 135 L205 155 L172 200 Z" fill="#3E7CC1"/>
+<path d="M245 135 L205 155 L238 200 Z" fill="#3E7CC1"/>
+<circle cx="205" cy="240" r="6" fill="#F5B942"/>
+<circle cx="205" cy="285" r="6" fill="#F5B942"/>
+<circle cx="205" cy="330" r="6" fill="#F5B942"/>
+<rect x="118" y="160" width="46" height="14" rx="4" fill="#F5B942"/>
+<rect x="246" y="160" width="46" height="14" rx="4" fill="#F5B942"/>
+<path d="M135 245 L160 237 L160 253 Z" fill="#F5B942"/>
+<path d="M175 245 L150 237 L150 253 Z" fill="#F5B942"/>
+<circle cx="155" cy="245" r="5" fill="#F5D98F"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Uniform</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8FB8E0">U &#183; YOU-nee-form</text>
+</svg>

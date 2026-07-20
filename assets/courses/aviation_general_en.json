@@ -1,0 +1,121 @@
+{
+  "id": "aviation_general_en",
+  "title": "Aviation English for Enthusiasts",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Unit 1 · What Happens During a Flight?",
+      "subtitle": "Essential terms for anyone who flies or loves aviation",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "At the Airport",
+          "exercises": [
+            { "type": "info", "title": "Airport terms", "subtitle": "From check-in to boarding:", "items": [
+              { "k": "Boarding pass", "v": "Your ticket to board the plane" }, { "k": "Gate", "v": "Where you board the aircraft" },
+              { "k": "Check-in", "v": "Registering for your flight and bags" }, { "k": "Departure", "v": "When the flight leaves" }, { "k": "Arrival", "v": "When the flight lands" }
+            ], "note": "You'll hear these words constantly in airport announcements." },
+            { "type": "multipleChoice", "prompt": "What is a boarding pass?", "options": ["Your ticket to board the plane", "A baggage tag", "A flight number", "A seat map"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does Gate mean?", "options": ["The baggage area", "Where you board the aircraft", "Passport control", "The duty-free shop"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Boarding pass", "right": "Ticket to board" }, { "left": "Gate", "right": "Boarding point" },
+              { "left": "Departure", "right": "Flight leaves" }, { "left": "Arrival", "right": "Flight lands" }
+            ]},
+            { "type": "fillBlank", "prompt": "What's the word for when a flight leaves?", "answers": ["departure"], "display": "Departure", "hint": "Flight leaves = ?" },
+            { "type": "listening", "audioText": "Departure", "options": ["Your ticket to board the plane", "Where you board the aircraft", "Registering for your flight and bags", "When the flight leaves"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "On Board",
+          "exercises": [
+            { "type": "info", "title": "Cabin terms", "subtitle": "Words you'll hear during the flight:", "items": [
+              { "k": "Cabin crew", "v": "The flight attendants" }, { "k": "Seatbelt", "v": "Keeps you secured in your seat" },
+              { "k": "Overhead bin", "v": "Storage above your seat" }, { "k": "Turbulence", "v": "Bumpy air that causes shaking" }, { "k": "Aisle seat", "v": "Seat next to the walkway" }
+            ]},
+            { "type": "multipleChoice", "prompt": "Who is the cabin crew?", "options": ["The pilots", "The flight attendants", "The passengers", "Ground staff"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What does Turbulence mean?", "options": ["The flight route", "Bumpy, shaky air", "Landing", "Takeoff"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Cabin crew", "right": "Flight attendants" }, { "left": "Seatbelt", "right": "Keeps you secured" },
+              { "left": "Turbulence", "right": "Bumpy air" }, { "left": "Overhead bin", "right": "Storage above seat" }
+            ]},
+            { "type": "wordBank", "prompt": "Put the words in order: Window seat", "correctOrder": ["Window", "seat"], "distractors": ["Aisle", "Overhead"] },
+            { "type": "listening", "audioText": "Turbulence", "options": ["The flight attendants", "Keeps you secured in your seat", "Storage above your seat", "Bumpy air that causes shaking"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "Fun Aviation Facts",
+          "exercises": [
+            { "type": "info", "title": "Why \"Mayday\"?", "subtitle": "The emergency call \"Mayday\" comes from the French \"m'aidez\" (help me).", "note": "It's said three times in a row over the radio to signal danger: Mayday, Mayday, Mayday." },
+            { "type": "info", "title": "Why is the black box orange?", "subtitle": "The \"black box\" is actually bright orange — so it can be found easily in wreckage." },
+            { "type": "multipleChoice", "prompt": "What language does \"Mayday\" come from?", "options": ["English", "French", "Spanish", "German"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What color is the black box really?", "options": ["Black", "Orange", "Gray", "Blue"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Mayday", "right": "Emergency call" }, { "left": "Black box", "right": "Flight recorder" },
+              { "left": "Cockpit", "right": "Pilots' cabin" }, { "left": "Runway", "right": "Take-off/landing strip" }
+            ]},
+            { "type": "fillBlank", "prompt": "What's the everyday name for the flight recorder?", "answers": ["black box"], "display": "Black box", "hint": "Flight recorder = ?" },
+            { "type": "listening", "audioText": "Mayday", "options": ["Emergency call", "Flight recorder", "Pilots' cabin", "Take-off/landing strip"], "correctIndex": 0 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Types of Aircraft",
+          "exercises": [
+            { "type": "info", "title": "What kind of plane is that?", "subtitle": "Common ways aircraft are grouped:", "items": [
+              { "k": "Narrow-body", "v": "A plane with a single aisle, used for short/medium flights" },
+              { "k": "Wide-body", "v": "A plane with two aisles, used for long-haul flights" },
+              { "k": "Regional jet", "v": "A smaller aircraft for short routes" },
+              { "k": "Cargo plane", "v": "Carries freight only, no passengers" }
+            ], "note": "Wide-body jets are the ones you usually see on long international flights." },
+            { "type": "multipleChoice", "prompt": "What is a Narrow-body aircraft?", "options": ["A plane with a single aisle", "A plane with two aisles", "A cargo-only plane", "A helicopter"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What is a Wide-body aircraft used for?", "options": ["Short regional hops", "Long-haul flights", "Cargo only", "Training pilots"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Narrow-body", "right": "Single aisle" }, { "left": "Wide-body", "right": "Two aisles" },
+              { "left": "Regional jet", "right": "Smaller, short routes" }, { "left": "Cargo plane", "right": "Freight only" }
+            ]},
+            { "type": "fillBlank", "prompt": "What do you call a plane that only carries freight?", "answers": ["cargo plane"], "display": "Cargo plane", "hint": "Freight only = ?" },
+            { "type": "listening", "audioText": "Wide-body", "options": ["A plane with a single aisle", "A plane with two aisles", "A smaller aircraft for short routes", "Carries freight only"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u1l5",
+          "title": "Delays and Airport Announcements",
+          "exercises": [
+            { "type": "info", "title": "What you'll hear over the loudspeaker", "subtitle": "Common announcement phrases:", "items": [
+              { "k": "Delayed", "v": "The flight will leave later than planned" },
+              { "k": "Cancelled", "v": "The flight will not happen at all" },
+              { "k": "Now boarding", "v": "Passengers can start boarding the aircraft" },
+              { "k": "Final call", "v": "The last announcement before the gate closes" }
+            ], "note": "If you hear \"final call\" for your flight, go to the gate immediately." },
+            { "type": "multipleChoice", "prompt": "What does \"Final call\" mean?", "options": ["The flight is cancelled", "The last announcement before the gate closes", "The flight has landed", "Boarding hasn't started yet"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What does \"Now boarding\" mean?", "options": ["The flight is delayed", "Passengers can start boarding", "The flight is cancelled", "The gate has changed"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Delayed", "right": "Leaving later" }, { "left": "Cancelled", "right": "Won't happen" },
+              { "left": "Now boarding", "right": "Start boarding" }, { "left": "Final call", "right": "Last announcement" }
+            ]},
+            { "type": "fillBlank", "prompt": "What's the word for when a flight doesn't happen at all?", "answers": ["cancelled"], "display": "Cancelled", "hint": "Won't happen = ?" },
+            { "type": "listening", "audioText": "Delayed", "options": ["The flight will not happen at all", "The flight will leave later than planned", "Passengers can start boarding", "The last announcement"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u1l6",
+          "title": "More Fun Aviation Facts",
+          "exercises": [
+            { "type": "info", "title": "Why is the cabin pressurized?", "subtitle": "At cruising altitude the air outside is too thin to breathe, so the cabin is pressurized to a comfortable level — usually equivalent to about 2,400 meters altitude." },
+            { "type": "info", "title": "What is a contrail?", "subtitle": "Those white lines behind a plane are called contrails — water vapor from the engines condensing and freezing in the cold air." },
+            { "type": "multipleChoice", "prompt": "Why is the cabin pressurized?", "options": ["So passengers can breathe comfortably at altitude", "To make the plane fly faster", "To save fuel", "To keep the cargo cool"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What is a Contrail?", "options": ["A radio signal", "A white trail of condensed water vapor", "A type of runway light", "A pilot's checklist"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Contrail", "right": "White trail behind a plane" }, { "left": "Cabin pressure", "right": "Lets you breathe at altitude" },
+              { "left": "Mayday", "right": "Emergency call" }, { "left": "Black box", "right": "Flight recorder" }
+            ]},
+            { "type": "fillBlank", "prompt": "What's the white line a plane leaves in the sky called?", "answers": ["contrail"], "display": "Contrail", "hint": "White trail = ?" },
+            { "type": "listening", "audioText": "Contrail", "options": ["An emergency call", "The flight recorder", "A white trail of condensed water vapor", "A landing strip"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

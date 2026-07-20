@@ -1,0 +1,121 @@
+{
+  "id": "aviation_general_tr",
+  "title": "Havacılık Meraklıları İçin İngilizce",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Ünite 1 · Uçuşta Neler Oluyor?",
+      "subtitle": "Uçağa binen herkesin bilmesi güzel olan temel terimler",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Havalimanında",
+          "exercises": [
+            { "type": "info", "title": "Havalimanı terimleri", "subtitle": "Check-in'den uçağa binene kadar:", "items": [
+              { "k": "Boarding pass", "v": "Biniş kartı" }, { "k": "Gate", "v": "Uçağa biniş kapısı" },
+              { "k": "Check-in", "v": "Bilet/bagaj işlemi" }, { "k": "Departure", "v": "Kalkış" }, { "k": "Arrival", "v": "Varış" }
+            ], "note": "Bu kelimeleri havalimanı anonslarında sürekli duyarsın." },
+            { "type": "multipleChoice", "prompt": "Boarding pass ne demektir?", "options": ["Biniş kartı", "Bagaj etiketi", "Uçuş numarası", "Koltuk numarası"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Gate kelimesi neyi ifade eder?", "options": ["Bagaj alanı", "Uçağa biniş kapısı", "Pasaport kontrolü", "Duty-free mağazası"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Boarding pass", "right": "Biniş kartı" }, { "left": "Gate", "right": "Kapı" },
+              { "left": "Departure", "right": "Kalkış" }, { "left": "Arrival", "right": "Varış" }
+            ]},
+            { "type": "fillBlank", "prompt": "Kalkışa İngilizce ne denir?", "answers": ["departure"], "display": "Departure", "hint": "Kalkış = ?" },
+            { "type": "listening", "audioText": "Departure", "options": ["Biniş kartı", "Uçağa biniş kapısı", "Bilet/bagaj işlemi", "Kalkış"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Uçakta",
+          "exercises": [
+            { "type": "info", "title": "Kabin terimleri", "subtitle": "Uçuş sırasında duyacağın kelimeler:", "items": [
+              { "k": "Cabin crew", "v": "Kabin ekibi" }, { "k": "Seatbelt", "v": "Emniyet kemeri" },
+              { "k": "Overhead bin", "v": "Üst bagaj bölmesi" }, { "k": "Turbulence", "v": "Türbülans (sarsıntı)" }, { "k": "Aisle seat", "v": "Koridor koltuğu" }
+            ]},
+            { "type": "multipleChoice", "prompt": "Cabin crew kimdir?", "options": ["Pilotlar", "Kabin ekibi (hostesler)", "Yolcular", "Yer personeli"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Turbulence ne demektir?", "options": ["Uçuş rotası", "Sarsıntı", "İniş", "Kalkış"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Cabin crew", "right": "Kabin ekibi" }, { "left": "Seatbelt", "right": "Emniyet kemeri" },
+              { "left": "Turbulence", "right": "Türbülans" }, { "left": "Overhead bin", "right": "Üst bagaj bölmesi" }
+            ]},
+            { "type": "wordBank", "prompt": "Kelimeleri sırala: Pencere koltuğu", "correctOrder": ["Window", "seat"], "distractors": ["Aisle", "Overhead"] },
+            { "type": "listening", "audioText": "Turbulence", "options": ["Kabin ekibi", "Emniyet kemeri", "Üst bagaj bölmesi", "Türbülans (sarsıntı)"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "Eğlenceli Havacılık Bilgileri",
+          "exercises": [
+            { "type": "info", "title": "Neden \"Mayday\"?", "subtitle": "Acil durum çağrısı olan \"Mayday\", Fransızca \"m'aidez\" (bana yardım edin) kelimesinden gelir.", "note": "Telsizde tehlikeyi bildirmek için üç kez art arda söylenir: Mayday, Mayday, Mayday." },
+            { "type": "info", "title": "Kara kutu neden turuncu?", "subtitle": "\"Black box\" (kara kutu) aslında parlak turuncu renktedir — enkazda kolayca bulunabilsin diye." },
+            { "type": "multipleChoice", "prompt": "Mayday kelimesi hangi dilden gelir?", "options": ["İngilizce", "Fransızca", "İspanyolca", "Almanca"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Kara kutunun gerçek rengi nedir?", "options": ["Siyah", "Turuncu", "Gri", "Mavi"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Mayday", "right": "Acil durum çağrısı" }, { "left": "Black box", "right": "Uçuş kaydedici" },
+              { "left": "Cockpit", "right": "Pilot kabini" }, { "left": "Runway", "right": "Pist" }
+            ]},
+            { "type": "fillBlank", "prompt": "Uçuş kaydedicisine günlük dilde ne denir?", "answers": ["black box"], "display": "Black box", "hint": "Kara kutu = ?" },
+            { "type": "listening", "audioText": "Mayday", "options": ["Acil durum çağrısı", "Uçuş kaydedici", "Pilot kabini", "Pist"], "correctIndex": 0 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Uçak Tipleri",
+          "exercises": [
+            { "type": "info", "title": "Bu ne tür bir uçak?", "subtitle": "Uçakların yaygın sınıflandırılma şekilleri:", "items": [
+              { "k": "Narrow-body", "v": "Tek koridorlu, kısa/orta mesafe uçuşlar için" },
+              { "k": "Wide-body", "v": "Çift koridorlu, uzun mesafe uçuşlar için" },
+              { "k": "Regional jet", "v": "Kısa rotalar için daha küçük bir uçak" },
+              { "k": "Cargo plane", "v": "Sadece yük taşır, yolcu almaz" }
+            ], "note": "Uzun uluslararası uçuşlarda genelde wide-body uçaklar görürsün." },
+            { "type": "multipleChoice", "prompt": "Narrow-body uçak nedir?", "options": ["Tek koridorlu bir uçak", "Çift koridorlu bir uçak", "Sadece kargo uçağı", "Bir helikopter"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Wide-body uçaklar ne için kullanılır?", "options": ["Kısa bölgesel uçuşlar", "Uzun mesafe uçuşlar", "Sadece kargo", "Pilot eğitimi"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Narrow-body", "right": "Tek koridor" }, { "left": "Wide-body", "right": "Çift koridor" },
+              { "left": "Regional jet", "right": "Küçük, kısa rota" }, { "left": "Cargo plane", "right": "Sadece yük" }
+            ]},
+            { "type": "fillBlank", "prompt": "Sadece yük taşıyan uçağa İngilizce ne denir?", "answers": ["cargo plane"], "display": "Cargo plane", "hint": "Sadece yük = ?" },
+            { "type": "listening", "audioText": "Wide-body", "options": ["Tek koridorlu bir uçak", "Çift koridorlu bir uçak", "Kısa rotalar için küçük bir uçak", "Sadece yük taşır"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u1l5",
+          "title": "Gecikmeler ve Havaalanı Anonsları",
+          "exercises": [
+            { "type": "info", "title": "Hoparlörden duyacakların", "subtitle": "Sık kullanılan anons ifadeleri:", "items": [
+              { "k": "Delayed", "v": "Uçuş planlanandan daha geç kalkacak" },
+              { "k": "Cancelled", "v": "Uçuş hiç gerçekleşmeyecek" },
+              { "k": "Now boarding", "v": "Yolcular uçağa binmeye başlayabilir" },
+              { "k": "Final call", "v": "Kapı kapanmadan önceki son anons" }
+            ], "note": "Uçuşun için \"final call\" duyarsan hemen kapıya git." },
+            { "type": "multipleChoice", "prompt": "\"Final call\" ne anlama gelir?", "options": ["Uçuş iptal edildi", "Kapı kapanmadan önceki son anons", "Uçuş indi", "Biniş henüz başlamadı"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "\"Now boarding\" ne anlama gelir?", "options": ["Uçuş gecikmeli", "Yolcular binmeye başlayabilir", "Uçuş iptal edildi", "Kapı değişti"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Delayed", "right": "Daha geç kalkacak" }, { "left": "Cancelled", "right": "Gerçekleşmeyecek" },
+              { "left": "Now boarding", "right": "Biniş başladı" }, { "left": "Final call", "right": "Son anons" }
+            ]},
+            { "type": "fillBlank", "prompt": "Bir uçuşun hiç gerçekleşmemesine İngilizce ne denir?", "answers": ["cancelled"], "display": "Cancelled", "hint": "Gerçekleşmeyecek = ?" },
+            { "type": "listening", "audioText": "Delayed", "options": ["Uçuş hiç gerçekleşmeyecek", "Uçuş planlanandan geç kalkacak", "Yolcular binmeye başlayabilir", "Son anons"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u1l6",
+          "title": "Daha Fazla Eğlenceli Havacılık Bilgisi",
+          "exercises": [
+            { "type": "info", "title": "Kabin neden basınçlandırılır?", "subtitle": "Seyir irtifasında dışarıdaki hava nefes almak için çok incedir, bu yüzden kabin rahat bir seviyeye — genelde yaklaşık 2.400 metre irtifaya eşdeğer — basınçlandırılır." },
+            { "type": "info", "title": "Contrail nedir?", "subtitle": "Uçağın arkasındaki beyaz çizgilere contrail denir — motorlardan çıkan su buharının soğuk havada yoğunlaşıp donmasıyla oluşur." },
+            { "type": "multipleChoice", "prompt": "Kabin neden basınçlandırılır?", "options": ["Yolcular irtifada rahat nefes alsın diye", "Uçak daha hızlı uçsun diye", "Yakıt tasarrufu için", "Kargoyu serin tutmak için"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Contrail nedir?", "options": ["Bir radyo sinyali", "Yoğunlaşmış su buharından oluşan beyaz bir iz", "Bir pist ışığı türü", "Pilotun kontrol listesi"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Contrail", "right": "Uçağın arkasındaki beyaz iz" }, { "left": "Cabin pressure", "right": "İrtifada nefes almanı sağlar" },
+              { "left": "Mayday", "right": "Acil durum çağrısı" }, { "left": "Black box", "right": "Uçuş kaydedici" }
+            ]},
+            { "type": "fillBlank", "prompt": "Uçağın gökyüzünde bıraktığı beyaz çizgiye İngilizce ne denir?", "answers": ["contrail"], "display": "Contrail", "hint": "Beyaz iz = ?" },
+            { "type": "listening", "audioText": "Contrail", "options": ["Bir acil durum çağrısı", "Uçuş kaydedici", "Yoğunlaşmış su buharından oluşan beyaz bir iz", "Bir iniş pisti"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

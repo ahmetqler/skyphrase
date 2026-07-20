@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#26215C"/>
+
+<circle cx="90" cy="105" r="24" fill="#F5B942"/>
+<rect x="100" y="290" width="210" height="105" rx="4" fill="#F5EFE0"/>
+<path d="M205 145 Q265 190 265 250 L265 290 L145 290 L145 250 Q145 190 205 145 Z" fill="#F5EFE0"/>
+<path d="M205 118 L205 145" stroke="#F5EFE0" stroke-width="6" stroke-linecap="round"/>
+<circle cx="205" cy="118" r="6" fill="#F5B942"/>
+<path d="M205 320 Q230 340 230 365 L230 395 L180 395 L180 365 Q180 340 205 320 Z" fill="#26215C"/>
+<rect x="70" y="215" width="16" height="180" rx="8" fill="#F5EFE0"/>
+<rect x="324" y="215" width="16" height="180" rx="8" fill="#F5EFE0"/>
+<circle cx="78" cy="208" r="11" fill="#F5EFE0"/>
+<circle cx="332" cy="208" r="11" fill="#F5EFE0"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">India</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#AFA9EC">I &#183; IN-dee-ah</text>
+</svg>

@@ -1,0 +1,54 @@
+name: skyphrase
+description: "Skyphrase - Havacılık terminolojisini ve ICAO frazeolojisini oyunlaştırarak öğreten uygulama."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+  cupertino_icons: ^1.0.6
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  audioplayers: ^6.1.0
+  flutter_svg: ^2.0.10+1
+  flutter_tts: ^4.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/courses/
+    - assets/sounds/
+    - assets/images/alphabet/
+    - assets/images/planes/
+    - assets/icon/
+
+# Yer tutucu (placeholder) app ikonu — assets/icon/app_icon.png, AppColors
+# "blue" temasının renkleriyle (navy zemin + primary/primaryDark mavi)
+# uyumlu basit bir kağıt uçak silüeti. Gerçek marka tasarımı geldiğinde
+# bu görsel değiştirilip aşağıdaki iki komut yeniden çalıştırılmalı:
+#   dart run flutter_launcher_icons
+#   dart run flutter_native_splash:create
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  ios: true
+  android: false
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#0E1626"
+  image: "assets/icon/app_icon.png"
+  ios: true
+  android: false

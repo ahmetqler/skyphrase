@@ -1,0 +1,360 @@
+{
+  "id": "aviation_pilot_tr",
+  "title": "Havacılık İngilizcesi",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Ünite 1 · ICAO Fonetik Alfabe",
+      "subtitle": "Harfleri telsizde şaşmadan söyleyin",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Alfa – Foxtrot",
+          "exercises": [
+            { "type": "info", "title": "Kod harfleri nedir?", "subtitle": "Telsizde harfler karışmasın diye her harfin bir kelimesi vardır. İlk altısı:", "items": [
+              { "k": "A", "v": "Alfa" }, { "k": "B", "v": "Bravo" }, { "k": "C", "v": "Charlie" },
+              { "k": "D", "v": "Delta" }, { "k": "E", "v": "Echo" }, { "k": "F", "v": "Foxtrot" }
+            ], "note": "Şimdi bunları alıştırmalarla pekiştireceksin." },
+            { "type": "fillBlank", "prompt": "A harfini telsizde nasıl okursun?", "answers": ["alfa", "alpha"], "display": "Alfa", "hint": "A = ?" },
+            { "type": "fillBlank", "prompt": "C harfinin kod karşılığını yaz.", "answers": ["charlie"], "display": "Charlie", "hint": "C = ?" },
+            { "type": "matchPairs", "prompt": "Harfleri kod karşılıklarıyla eşleştir", "pairs": [
+              { "left": "B", "right": "Bravo" }, { "left": "D", "right": "Delta" },
+              { "left": "E", "right": "Echo" }, { "left": "A", "right": "Alfa" }
+            ]},
+            { "type": "fillBlank", "prompt": "F harfini telsizde nasıl söylersin?", "answers": ["foxtrot"], "display": "Foxtrot", "hint": "F = ?" },
+            { "type": "fillBlank", "prompt": "D harfinin kod karşılığını yaz.", "answers": ["delta"], "display": "Delta", "hint": "D = ?" },
+            { "type": "listening", "audioText": "Charlie", "options": ["Alfa", "Bravo", "Charlie", "Delta"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Golf – Mike",
+          "exercises": [
+            { "type": "info", "title": "Sıradaki harfler", "subtitle": "G'den M'ye kadar:", "items": [
+              { "k": "G", "v": "Golf" }, { "k": "H", "v": "Hotel" }, { "k": "I", "v": "India" },
+              { "k": "J", "v": "Juliett" }, { "k": "K", "v": "Kilo" }, { "k": "L", "v": "Lima" }, { "k": "M", "v": "Mike" }
+            ], "note": "Juliett iki 't' ile yazılır." },
+            { "type": "fillBlank", "prompt": "H harfini telsizde nasıl okursun?", "answers": ["hotel"], "display": "Hotel", "hint": "H = ?" },
+            { "type": "fillBlank", "prompt": "J harfinin kod karşılığını yaz.", "answers": ["juliett", "juliet"], "display": "Juliett", "hint": "J = ?" },
+            { "type": "fillBlank", "prompt": "K harfini telsizde nasıl söylersin?", "answers": ["kilo"], "display": "Kilo", "hint": "K = ?" },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "G", "right": "Golf" }, { "left": "I", "right": "India" },
+              { "left": "L", "right": "Lima" }, { "left": "M", "right": "Mike" }
+            ]},
+            { "type": "fillBlank", "prompt": "G harfinin kod karşılığını yaz.", "answers": ["golf"], "display": "Golf", "hint": "G = ?" },
+            { "type": "listening", "audioText": "Kilo", "options": ["Golf", "Hotel", "Kilo", "Mike"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "November – Zulu",
+          "exercises": [
+            { "type": "info", "title": "Alfabenin geri kalanı", "subtitle": "Bu derste geçen harfler:", "items": [
+              { "k": "N", "v": "November" }, { "k": "Q", "v": "Quebec" }, { "k": "R", "v": "Romeo" },
+              { "k": "S", "v": "Sierra" }, { "k": "T", "v": "Tango" }, { "k": "V", "v": "Victor" },
+              { "k": "W", "v": "Whiskey" }, { "k": "Y", "v": "Yankee" }, { "k": "Z", "v": "Zulu" }
+            ]},
+            { "type": "fillBlank", "prompt": "N harfini telsizde nasıl okursun?", "answers": ["november"], "display": "November", "hint": "N = ?" },
+            { "type": "fillBlank", "prompt": "Q harfinin kod karşılığını yaz.", "answers": ["quebec"], "display": "Quebec", "hint": "Q = ?" },
+            { "type": "fillBlank", "prompt": "R harfini telsizde nasıl söylersin?", "answers": ["romeo"], "display": "Romeo", "hint": "R = ?" },
+            { "type": "fillBlank", "prompt": "W harfinin kod karşılığını yaz.", "answers": ["whiskey", "whisky"], "display": "Whiskey", "hint": "W = ?" },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "S", "right": "Sierra" }, { "left": "T", "right": "Tango" },
+              { "left": "V", "right": "Victor" }, { "left": "Z", "right": "Zulu" }
+            ]},
+            { "type": "fillBlank", "prompt": "Y harfinin kod karşılığını yaz.", "answers": ["yankee"], "display": "Yankee", "hint": "Y = ?" },
+            { "type": "listening", "audioText": "Sierra", "options": ["November", "Romeo", "Sierra", "Zulu"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Kod okuma alıştırması",
+          "exercises": [
+            { "type": "info", "title": "Kalan harfler ve tescil okuma", "subtitle": "Son harfler:", "items": [
+              { "k": "O", "v": "Oscar" }, { "k": "P", "v": "Papa" }, { "k": "U", "v": "Uniform" }, { "k": "X", "v": "X-ray" }
+            ], "note": "Bir uçak tescilini (ör. TC-BCA) okurken harfleri tek tek kod kelimeleriyle söylersin: Bravo Charlie Alfa." },
+            { "type": "fillBlank", "prompt": "O harfini telsizde nasıl okursun?", "answers": ["oscar"], "display": "Oscar", "hint": "O = ?" },
+            { "type": "fillBlank", "prompt": "X harfinin kod karşılığını yaz.", "answers": ["x-ray", "xray", "x ray"], "display": "X-ray", "hint": "X = ?" },
+            { "type": "wordBank", "prompt": "Tescili sırayla oku: B - C - A", "correctOrder": ["Bravo", "Charlie", "Alfa"], "distractors": ["Delta", "Golf"] },
+            { "type": "wordBank", "prompt": "Sırayla oku: F - L - M", "correctOrder": ["Foxtrot", "Lima", "Mike"], "distractors": ["Golf", "Kilo"] },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "P", "right": "Papa" }, { "left": "U", "right": "Uniform" },
+              { "left": "N", "right": "November" }, { "left": "O", "right": "Oscar" }
+            ]},
+            { "type": "listening", "audioText": "Uniform", "options": ["Oscar", "Papa", "Uniform", "X-ray"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Ünite 2 · Temel Telsiz Frazeolojisi",
+      "subtitle": "Standart kelimeler ve anlamları",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Roger, Wilco, Affirm",
+          "exercises": [
+            { "type": "info", "title": "Roger", "subtitle": "\"Son mesajınızı tümüyle aldım.\"", "note": "Dikkat: Roger \"evet\" anlamına GELMEZ. Sadece mesajı duyduğunu bildirir." },
+            { "type": "info", "title": "Diğer temel kelimeler", "subtitle": "En sık kullanılan üç kelime:", "items": [
+              { "k": "Wilco", "v": "Anladım ve uygulayacağım" },
+              { "k": "Affirm", "v": "Evet" },
+              { "k": "Negative", "v": "Hayır / izin yok" }
+            ], "note": "Wilco = \"will comply\" (uyacağım) kelimelerinin kısaltmasıdır." },
+            { "type": "multipleChoice", "prompt": "Telsizde Roger ne anlama gelir?", "options": [
+              "Evet, kabul ediyorum", "Son mesajınızı tümüyle aldım", "Talimatı uygulayacağım", "Anlamadım, tekrar edin"
+            ], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Wilco hangi anlama gelir?", "options": [
+              "Anladım ve uygulayacağım", "Bekleyin", "Hayır", "Mesajı tekrar edin"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "ICAO frazeolojisinde evet anlamına gelen kelime hangisidir?", "options": ["Roger", "Affirm", "Wilco", "Copy"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Negative ne demektir?", "options": [
+              "Hayır / izin yok / yanlış", "Bekleyin", "Mesajı aldım", "Devam edin"
+            ], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Kelimeleri anlamlarıyla eşleştir", "pairs": [
+              { "left": "Roger", "right": "Mesajı aldım" }, { "left": "Wilco", "right": "Uygulayacağım" },
+              { "left": "Affirm", "right": "Evet" }, { "left": "Negative", "right": "Hayır" }
+            ]},
+            { "type": "listening", "audioText": "Wilco", "options": ["Evet", "Anladım ve uygulayacağım", "Hayır / izin yok", "Son mesajınızı tümüyle aldım"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "Standby, Say again, Correction",
+          "exercises": [
+            { "type": "info", "title": "Dört yararlı kelime", "subtitle": "Konuşmayı yönetmene yarayan kelimeler:", "items": [
+              { "k": "Standby", "v": "Bekleyin, sizi arayacağım" },
+              { "k": "Say again", "v": "Tekrar söyleyin" },
+              { "k": "Disregard", "v": "Bu mesajı dikkate almayın" },
+              { "k": "Correction", "v": "Hata yaptım, doğrusu şu..." }
+            ]},
+            { "type": "multipleChoice", "prompt": "Standby ne anlama gelir?", "options": [
+              "Bekleyin, sizi arayacağım", "Mesajı tekrar edin", "Talimatı iptal edin", "Anlaşıldı"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Bir mesajı anlamadın. Ne dersin?", "options": ["Say again", "Disregard", "Wilco", "Break"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Disregard ne demektir?", "options": [
+              "Bu mesajı dikkate almayın", "Mesajı geri okuyun", "Onaylıyorum", "Bekleyin"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Söylediğin bir bilgiyi düzeltmek için hangi kelimeyi kullanırsın?", "options": ["Correction", "Confirm", "Roger", "Standby"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Standby", "right": "Bekleyin" }, { "left": "Say again", "right": "Tekrar söyleyin" },
+              { "left": "Disregard", "right": "Dikkate almayın" }, { "left": "Correction", "right": "Düzeltme" }
+            ]},
+            { "type": "listening", "audioText": "Disregard", "options": ["Bekleyin, sizi arayacağım", "Tekrar söyleyin", "Bu mesajı dikkate almayın", "Hata yaptım, doğrusu şu..."], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l3",
+          "title": "Cümle kurma",
+          "exercises": [
+            { "type": "info", "title": "Şimdi cümle kuralım", "subtitle": "Öğrendiğin kelimeleri doğru sıraya dizerek gerçek telsiz cevapları oluştur." },
+            { "type": "wordBank", "prompt": "Kule seni çağırdı; mesajı aldığını ve uygulayacağını bildir", "correctOrder": ["Roger", "wilco"], "distractors": ["negative", "standby", "affirm"] },
+            { "type": "wordBank", "prompt": "Bir mesajı duymadın; nazikçe tekrar iste", "correctOrder": ["Say", "again", "please"], "distractors": ["roger", "disregard"] },
+            { "type": "wordBank", "prompt": "Talimatı bekleyeceğini bildir", "correctOrder": ["Standby", "one"], "distractors": ["wilco", "negative", "correction"] },
+            { "type": "listening", "audioText": "Standby", "options": ["Bekleyin, sizi arayacağım", "Tekrar söyleyin", "Anladım ve uygulayacağım", "Evet"], "correctIndex": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Ünite 3 · Havacılık Sayıları",
+      "subtitle": "Sayıların telsizdeki özel telaffuzu",
+      "lessons": [
+        {
+          "id": "u3l1",
+          "title": "Tree, Fife, Niner",
+          "exercises": [
+            { "type": "info", "title": "Sayılar neden farklı okunur?", "subtitle": "Bazı sayılar telsizde birbirine benzediği için farklı telaffuz edilir:", "items": [
+              { "k": "3", "v": "Tree" }, { "k": "4", "v": "Fower" }, { "k": "5", "v": "Fife" }, { "k": "9", "v": "Niner" }
+            ], "note": "\"Five\" ve \"nine\" parazitte karışabildiği için \"fife\" ve \"niner\" denir." },
+            { "type": "fillBlank", "prompt": "Telsizde 3 sayısı nasıl okunur?", "answers": ["tree"], "display": "Tree", "hint": "3 = ?" },
+            { "type": "fillBlank", "prompt": "9 sayısını telsizde nasıl söylersin?", "answers": ["niner"], "display": "Niner", "hint": "9 = ?" },
+            { "type": "fillBlank", "prompt": "5 sayısı telsizde nasıl okunur?", "answers": ["fife"], "display": "Fife", "hint": "5 = ?" },
+            { "type": "matchPairs", "prompt": "Sayıları telaffuzlarıyla eşleştir", "pairs": [
+              { "left": "3", "right": "Tree" }, { "left": "4", "right": "Fower" },
+              { "left": "5", "right": "Fife" }, { "left": "9", "right": "Niner" }
+            ]},
+            { "type": "listening", "audioText": "Niner", "options": ["3", "4", "5", "9"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u3l2",
+          "title": "İrtifa ve Rota Okuma",
+          "exercises": [
+            { "type": "info", "title": "Sayılar tek tek okunur", "subtitle": "Rota (heading) ve irtifa asla tek bir sayı gibi okunmaz — her hane ayrı ayrı söylenir:", "items": [
+              { "k": "090", "v": "Zero niner zero" }, { "k": "270", "v": "Two seven zero" },
+              { "k": "360", "v": "Tree six zero" }, { "k": "FL350", "v": "Flight level tree fife zero" }
+            ], "note": "3, 5 ve 9'un özel telaffuzu olmasının sebebi bu — rota ve irtifalarda sürekli duyacaksın." },
+            { "type": "fillBlank", "prompt": "090 rotasını telsizde nasıl okursun?", "answers": ["zero niner zero"], "display": "Zero niner zero", "hint": "0-9-0 = ?" },
+            { "type": "fillBlank", "prompt": "350 uçuş seviyesini (flight level) nasıl okursun?", "answers": ["tree fife zero"], "display": "Tree fife zero", "hint": "3-5-0 = ?" },
+            { "type": "wordBank", "prompt": "270 rotasını sırayla oku", "correctOrder": ["Two", "seven", "zero"], "distractors": ["Tree", "niner"] },
+            { "type": "matchPairs", "prompt": "Rotayı söyleniş şekliyle eşleştir", "pairs": [
+              { "left": "090", "right": "Zero niner zero" }, { "left": "180", "right": "One eight zero" },
+              { "left": "270", "right": "Two seven zero" }, { "left": "360", "right": "Tree six zero" }
+            ]},
+            { "type": "listening", "audioText": "Tree six zero", "options": ["090", "180", "270", "360"], "correctIndex": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Ünite 4 · Taksi, Kalkış ve İniş İzinleri",
+      "subtitle": "Yerde hareket etmek ve devre uçmak için kullanılan frazeoloji",
+      "lessons": [
+        {
+          "id": "u4l1",
+          "title": "Taksi ve Yer Hareketi İzinleri",
+          "exercises": [
+            { "type": "info", "title": "Piste giderken", "subtitle": "Yer hareketi için temel kelimeler:", "items": [
+              { "k": "Taxi", "v": "Uçağı kendi gücüyle yerde hareket ettirmek" },
+              { "k": "Holding point", "v": "Pistten önce izin beklenen nokta" },
+              { "k": "Line up", "v": "Piste girip pozisyonda beklemek" },
+              { "k": "Cleared to taxi", "v": "Yerde piste kadar hareket etme izni" }
+            ], "note": "İzin verilene kadar holding point'te durmak zorundasın." },
+            { "type": "multipleChoice", "prompt": "\"Cleared to taxi\" ne anlama gelir?", "options": ["Yerde piste kadar hareket etme izni", "Kalkış izni", "İniş izni", "Park etme izni"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Holding point nedir?", "options": ["Kapı alanı", "Pistten önce izin beklenen nokta", "Park pozisyonu", "Yakıt kamyonunun yeri"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Taxi", "right": "Yerde hareket etmek" }, { "left": "Holding point", "right": "Pistten önce beklemek" },
+              { "left": "Line up", "right": "Girip beklemek" }, { "left": "Cleared to taxi", "right": "Hareket izni" }
+            ]},
+            { "type": "wordBank", "prompt": "Talimatı oluştur: pistten önceki bekleme noktasına git", "correctOrder": ["Taxi", "to", "holding", "point"], "distractors": ["Cleared", "for", "takeoff"] },
+            { "type": "listening", "audioText": "Holding point", "options": ["Uçağı yerde hareket ettirmek", "Pistten önce izin beklenen nokta", "Piste girip beklemek", "Yerde hareket etme izni"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u4l2",
+          "title": "Kalkış ve Kalkış Sonrası İzinleri",
+          "exercises": [
+            { "type": "info", "title": "Pistten havaya", "subtitle": "Kalkış için temel kelimeler:", "items": [
+              { "k": "Cleared for takeoff", "v": "Kalkış koşusuna başlama izni" },
+              { "k": "Line up and wait", "v": "Piste gir, pozisyonda bekle, henüz kalkma" },
+              { "k": "Squawk", "v": "Transponderına gireceğin kod" },
+              { "k": "Departure frequency", "v": "Kalkıştan sonra bağlanılacak frekans" }
+            ]},
+            { "type": "multipleChoice", "prompt": "\"Line up and wait\" ne anlama gelir?", "options": ["Piste gir ve hemen kalk", "Piste gir, pozisyonda bekle, henüz kalkma", "Holding point'te bekle", "Kapıya geri dön"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Squawk kodu nedir?", "options": ["Bir hava durumu raporu", "Transponderına gireceğin kod", "Bir pist numarası", "Bir radyo frekansı"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Cleared for takeoff", "right": "Koşuya başlama izni" }, { "left": "Line up and wait", "right": "Pistte bekle" },
+              { "left": "Squawk", "right": "Transponder kodu" }, { "left": "Departure frequency", "right": "Kalkış sonrası frekans" }
+            ]},
+            { "type": "fillBlank", "prompt": "Kalkış koşusuna başlama iznine İngilizce ne denir?", "answers": ["cleared for takeoff"], "display": "Cleared for takeoff", "hint": "Koşuya başlama izni = ?" },
+            { "type": "listening", "audioText": "Squawk", "options": ["Kalkış koşusuna başlama izni", "Piste gir, pozisyonda bekle", "Transponderına gireceğin kod", "Kalkıştan sonra bağlanılacak frekans"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u4l3",
+          "title": "İniş İzinleri ve Tekrar Okuma Kuralları",
+          "exercises": [
+            { "type": "info", "title": "Yere geri dönüş", "subtitle": "İniş için temel kelimeler:", "items": [
+              { "k": "Cleared to land", "v": "İniş izni" },
+              { "k": "Go around", "v": "Yaklaşmayı iptal edip tekrar tırmanmak" },
+              { "k": "Readback", "v": "İzni doğrulamak için ATC'ye tekrar okumak" },
+              { "k": "Final", "v": "İnişten önceki son, düz yaklaşma bacağı" }
+            ], "note": "Readback önemli izinlerde opsiyonel değildir — ATC doğru anladığını duymak zorunda." },
+            { "type": "multipleChoice", "prompt": "\"Go around\" ne anlama gelir?", "options": ["Hemen in", "Yaklaşmayı iptal edip tekrar tırmanmak", "Havaalanı etrafında taksi yapmak", "Holding point'te beklemek"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Pilotlar neden Readback yapar?", "options": ["İzni doğru aldıklarını onaylamak için", "Soru sormak için", "Acil durum bildirmek için", "Yakıt istemek için"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Cleared to land", "right": "İniş izni" }, { "left": "Go around", "right": "Tekrar tırmanmak" },
+              { "left": "Readback", "right": "İzni doğrulamak" }, { "left": "Final", "right": "Son yaklaşma bacağı" }
+            ]},
+            { "type": "wordBank", "prompt": "İzni oluştur: iki yedi pistine iniş izni", "correctOrder": ["Cleared", "to", "land"], "distractors": ["Cleared", "for", "takeoff"] },
+            { "type": "listening", "audioText": "Go around", "options": ["İniş izni", "Yaklaşmayı iptal edip tekrar tırmanmak", "İzni ATC'ye tekrar okumak", "Yaklaşmanın son bacağı"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Ünite 5 · Acil Durum Frazeolojisi",
+      "subtitle": "Telsizde acil durum bildirme ve tarif etme",
+      "lessons": [
+        {
+          "id": "u5l1",
+          "title": "Mayday ve Pan-Pan Farkı",
+          "exercises": [
+            { "type": "info", "title": "İki aciliyet seviyesi", "subtitle": "İkisi de art arda üç kez söylenir, ama farklı anlama gelir:", "items": [
+              { "k": "Mayday", "v": "Ağır ve yakın tehlike — bir tehlike çağrısı" },
+              { "k": "Pan-Pan", "v": "Aciliyet var ama hayati tehlike yok" }
+            ], "note": "Mayday, Mayday, Mayday — Pan-Pan, Pan-Pan, Pan-Pan. Her zaman üç kez." },
+            { "type": "multipleChoice", "prompt": "\"Mayday\" ne zaman söylenir?", "options": ["Ağır ve yakın tehlike anında", "Küçük bir teknik sorunda", "Biraz gecikince", "Frekans değişikliği gerekince"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Mayday art arda kaç kez söylenir?", "options": ["Bir kez", "İki kez", "Üç kez", "Beş kez"], "correctIndex": 2 },
+            { "type": "multipleChoice", "prompt": "Pan-Pan neyi belirtir?", "options": ["Ağır ve yakın tehlike", "Aciliyet var ama hayati tehlike yok", "Rutin trafik", "Hava durumu gecikmesi"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Mayday", "right": "Tehlike, ağır risk" }, { "left": "Pan-Pan", "right": "Acil, hayati tehlike yok" }
+            ]},
+            { "type": "listening", "audioText": "Pan-Pan", "options": ["Ağır ve yakın tehlike", "Aciliyet var ama hayati tehlike yok", "Rutin devir teslim", "Standart tekrar okuma"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u5l2",
+          "title": "Acil Durum Bildirme",
+          "exercises": [
+            { "type": "info", "title": "ATC'nin bilmesi gerekenler", "subtitle": "Mayday veya Pan-Pan'dan sonra şu bilgileri ver:", "items": [
+              { "k": "Souls on board", "v": "Uçaktaki toplam kişi sayısı" },
+              { "k": "Fuel remaining", "v": "Kalan yakıt, genelde süre olarak" },
+              { "k": "Nature of the emergency", "v": "Ne tür bir sorun yaşadığın" },
+              { "k": "Request priority landing", "v": "Diğer trafikten önce iniş istemek" }
+            ]},
+            { "type": "multipleChoice", "prompt": "\"Souls on board\" ne anlama gelir?", "options": ["Uçaktaki toplam kişi sayısı", "Pilotun adı", "Uçağın tescil numarası", "Kargo ağırlığı"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Acil durumda neden kalan yakıtı bildirirsin?", "options": ["ATC ne kadar zamanın olduğunu bilsin diye", "Daha fazla yakıt istemek için", "Önemli değil", "Uçak tipini teyit etmek için"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Souls on board", "right": "Kişi sayısı" }, { "left": "Fuel remaining", "right": "Kalan süre" },
+              { "left": "Nature of emergency", "right": "Sorunun kendisi" }, { "left": "Priority landing", "right": "Önce iniş" }
+            ]},
+            { "type": "fillBlank", "prompt": "Uçaktaki toplam kişi sayısına İngilizce ne denir?", "answers": ["souls on board"], "display": "Souls on board", "hint": "Toplam kişi = ?" },
+            { "type": "listening", "audioText": "Souls on board", "options": ["Kalan yakıt miktarı", "Uçaktaki toplam kişi sayısı", "Ne tür bir sorun yaşadığın", "Diğerlerinden önce iniş istemek"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "Ünite 6 · Hava Durumu Frazeolojisi",
+      "subtitle": "Telsizde temel hava durumunu okuma ve bildirme",
+      "lessons": [
+        {
+          "id": "u6l1",
+          "title": "Temel Hava Durumu İfadeleri",
+          "exercises": [
+            { "type": "info", "title": "Sık duyacağın hava durumu kelimeleri", "subtitle": "Brifing ve raporlarda temel terimler:", "items": [
+              { "k": "METAR", "v": "Rutin bir havacılık hava durumu raporu" },
+              { "k": "Ceiling", "v": "Gökyüzünün çoğunu kaplayan en alçak bulut katmanının yüksekliği" },
+              { "k": "Visibility", "v": "Ne kadar uzağı görebildiğin" },
+              { "k": "Overcast", "v": "Gökyüzü tamamen bulutla kaplı" }
+            ]},
+            { "type": "multipleChoice", "prompt": "METAR nedir?", "options": ["Rutin bir havacılık hava durumu raporu", "Bir izin türü", "Bir radyo frekansı", "Bir acil durum çağrısı"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Ceiling ne anlama gelir?", "options": ["Uçağın tepesi", "Gökyüzünü kaplayan en alçak bulut katmanının yüksekliği", "İzin verilen azami irtifa", "Pist uzunluğu"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "METAR", "right": "Hava durumu raporu" }, { "left": "Ceiling", "right": "Bulut tabanı yüksekliği" },
+              { "left": "Visibility", "right": "Görüş mesafesi" }, { "left": "Overcast", "right": "Tamamen bulutlu gökyüzü" }
+            ]},
+            { "type": "fillBlank", "prompt": "Gökyüzünün tamamen bulutla kaplı olmasına İngilizce ne denir?", "answers": ["overcast"], "display": "Overcast", "hint": "Tamamen bulutlu = ?" },
+            { "type": "listening", "audioText": "Overcast", "options": ["Rutin bir hava durumu raporu", "En alçak bulut katmanının yüksekliği", "Ne kadar uzağı görebildiğin", "Gökyüzü tamamen bulutla kaplı"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u6l2",
+          "title": "Rüzgar ve Görüş Raporları",
+          "exercises": [
+            { "type": "info", "title": "Rüzgar raporu okuma", "subtitle": "Rüzgar önce yön, sonra hız olarak verilir:", "items": [
+              { "k": "270 at 15", "v": "270°'den, 15 knot hızında rüzgar" },
+              { "k": "Gusting", "v": "Rüzgar hızı kısa süreliğine aniden artıyor" },
+              { "k": "Crosswind", "v": "Piste boyunca değil, piste çapraz esen rüzgar" },
+              { "k": "Runway in use", "v": "O an aktif olarak kullanılan pist" }
+            ], "note": "\"Wind two seven zero at one five\" demek: yön 270°, hız 15 knot." },
+            { "type": "fillBlank", "prompt": "\"270 at 15\" rüzgarını telsizde nasıl okursun?", "answers": ["two seven zero at one five"], "display": "Two seven zero at one five", "hint": "270 at 15 = ?" },
+            { "type": "multipleChoice", "prompt": "Gusting ne anlama gelir?", "options": ["Sabit, değişmeyen rüzgar", "Rüzgar hızı kısa süreliğine aniden artıyor", "Hiç rüzgar yok", "Rüzgar yönü bilinmiyor"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Crosswind nedir?", "options": ["Piste boyunca esen rüzgar", "Piste çapraz esen rüzgar", "Rüzgarsızlık", "Arkadan esen rüzgar"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Gusting", "right": "Ani artış" }, { "left": "Crosswind", "right": "Piste çapraz eser" },
+              { "left": "Runway in use", "right": "O an aktif pist" }, { "left": "270 at 15", "right": "Yön ve hız" }
+            ]},
+            { "type": "listening", "audioText": "Crosswind", "options": ["Sabit rüzgar", "Piste boyunca esen rüzgar", "Piste çapraz esen rüzgar", "Rüzgarsızlık"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

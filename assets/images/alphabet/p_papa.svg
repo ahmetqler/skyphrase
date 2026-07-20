@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#085041"/>
+
+<circle cx="160" cy="150" r="36" fill="#F5EFE0"/>
+<path d="M120 200 Q160 185 200 200 L195 320 L175 320 L172 380 L148 380 L145 320 L125 320 Z" fill="#5DCAA5"/>
+<circle cx="275" cy="225" r="26" fill="#F5EFE0"/>
+<path d="M248 262 Q275 250 302 262 L298 340 L284 340 L282 385 L268 385 L266 340 L252 340 Z" fill="#F5B942"/>
+<path d="M198 250 Q225 268 250 268" fill="none" stroke="#F5EFE0" stroke-width="10" stroke-linecap="round"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Papa</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#9FE1CB">P &#183; pah-PAH</text>
+</svg>

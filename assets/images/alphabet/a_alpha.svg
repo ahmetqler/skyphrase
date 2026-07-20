@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#0F2440"/>
+
+<circle cx="205" cy="230" r="115" fill="#F5B942"/>
+<path d="M150 345 L158 300 L150 275 L168 250 L188 240 L205 210 L218 185 L232 172 L246 170 L252 180 L243 190 L233 196 L238 214 L250 245 L262 285 L268 345 Z" fill="#0F2440"/>
+<path d="M232 172 L228 158 L240 166 Z" fill="#0F2440"/>
+<circle cx="120" cy="120" r="4" fill="#F5D98F"/>
+<circle cx="320" cy="95" r="3" fill="#F5D98F"/>
+<circle cx="345" cy="160" r="4" fill="#F5D98F"/>
+<circle cx="80" cy="200" r="3" fill="#F5D98F"/>
+<rect x="80" y="345" width="250" height="8" rx="4" fill="#1A3A61"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Alpha</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8FB8E0">A &#183; AL-fah</text>
+</svg>

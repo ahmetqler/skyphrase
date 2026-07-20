@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#4A1B0C"/>
+
+<path d="M130 165 L160 115 L180 170 Z" fill="#D85A30"/>
+<path d="M280 165 L250 115 L230 170 Z" fill="#D85A30"/>
+<path d="M138 160 L158 128 L172 165 Z" fill="#2A0F06"/>
+<path d="M272 160 L252 128 L238 165 Z" fill="#2A0F06"/>
+<path d="M125 175 Q205 130 285 175 Q290 250 205 320 Q120 250 125 175 Z" fill="#D85A30"/>
+<path d="M155 240 Q205 215 255 240 Q245 290 205 318 Q165 290 155 240 Z" fill="#F5EFE0"/>
+<circle cx="172" cy="212" r="9" fill="#2A0F06"/>
+<circle cx="238" cy="212" r="9" fill="#2A0F06"/>
+<path d="M193 262 L217 262 L205 276 Z" fill="#2A0F06"/>
+<circle cx="315" cy="330" r="10" fill="#F5B942"/>
+<rect x="322" y="278" width="5" height="52" fill="#F5B942"/>
+<path d="M322 278 Q340 285 340 298" fill="none" stroke="#F5B942" stroke-width="5"/>
+<circle cx="85" cy="345" r="9" fill="#F5B942"/>
+<rect x="91" y="300" width="5" height="45" fill="#F5B942"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Foxtrot</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#F0B49B">F &#183; FOKS-trot</text>
+</svg>

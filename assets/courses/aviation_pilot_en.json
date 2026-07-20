@@ -1,0 +1,360 @@
+{
+  "id": "aviation_pilot_en",
+  "title": "Aviation English",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Unit 1 · ICAO Phonetic Alphabet",
+      "subtitle": "Say the letters confidently over the radio",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Alfa – Foxtrot",
+          "exercises": [
+            { "type": "info", "title": "What are code letters?", "subtitle": "So letters don't get confused over the radio, each one has its own code word. The first six:", "items": [
+              { "k": "A", "v": "Alfa" }, { "k": "B", "v": "Bravo" }, { "k": "C", "v": "Charlie" },
+              { "k": "D", "v": "Delta" }, { "k": "E", "v": "Echo" }, { "k": "F", "v": "Foxtrot" }
+            ], "note": "Now you'll reinforce these with practice." },
+            { "type": "fillBlank", "prompt": "How do you say the letter A on the radio?", "answers": ["alfa", "alpha"], "display": "Alfa", "hint": "A = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter C.", "answers": ["charlie"], "display": "Charlie", "hint": "C = ?" },
+            { "type": "matchPairs", "prompt": "Match the letters with their code words", "pairs": [
+              { "left": "B", "right": "Bravo" }, { "left": "D", "right": "Delta" },
+              { "left": "E", "right": "Echo" }, { "left": "A", "right": "Alfa" }
+            ]},
+            { "type": "fillBlank", "prompt": "How do you say the letter F on the radio?", "answers": ["foxtrot"], "display": "Foxtrot", "hint": "F = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter D.", "answers": ["delta"], "display": "Delta", "hint": "D = ?" },
+            { "type": "listening", "audioText": "Charlie", "options": ["Alfa", "Bravo", "Charlie", "Delta"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Golf – Mike",
+          "exercises": [
+            { "type": "info", "title": "Next letters", "subtitle": "From G to M:", "items": [
+              { "k": "G", "v": "Golf" }, { "k": "H", "v": "Hotel" }, { "k": "I", "v": "India" },
+              { "k": "J", "v": "Juliett" }, { "k": "K", "v": "Kilo" }, { "k": "L", "v": "Lima" }, { "k": "M", "v": "Mike" }
+            ], "note": "Juliett is spelled with two 't's." },
+            { "type": "fillBlank", "prompt": "How do you say the letter H on the radio?", "answers": ["hotel"], "display": "Hotel", "hint": "H = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter J.", "answers": ["juliett", "juliet"], "display": "Juliett", "hint": "J = ?" },
+            { "type": "fillBlank", "prompt": "How do you say the letter K on the radio?", "answers": ["kilo"], "display": "Kilo", "hint": "K = ?" },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "G", "right": "Golf" }, { "left": "I", "right": "India" },
+              { "left": "L", "right": "Lima" }, { "left": "M", "right": "Mike" }
+            ]},
+            { "type": "fillBlank", "prompt": "Write the code word for the letter G.", "answers": ["golf"], "display": "Golf", "hint": "G = ?" },
+            { "type": "listening", "audioText": "Kilo", "options": ["Golf", "Hotel", "Kilo", "Mike"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "November – Zulu",
+          "exercises": [
+            { "type": "info", "title": "The rest of the alphabet", "subtitle": "Letters covered in this lesson:", "items": [
+              { "k": "N", "v": "November" }, { "k": "Q", "v": "Quebec" }, { "k": "R", "v": "Romeo" },
+              { "k": "S", "v": "Sierra" }, { "k": "T", "v": "Tango" }, { "k": "V", "v": "Victor" },
+              { "k": "W", "v": "Whiskey" }, { "k": "Y", "v": "Yankee" }, { "k": "Z", "v": "Zulu" }
+            ]},
+            { "type": "fillBlank", "prompt": "How do you say the letter N on the radio?", "answers": ["november"], "display": "November", "hint": "N = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter Q.", "answers": ["quebec"], "display": "Quebec", "hint": "Q = ?" },
+            { "type": "fillBlank", "prompt": "How do you say the letter R on the radio?", "answers": ["romeo"], "display": "Romeo", "hint": "R = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter W.", "answers": ["whiskey", "whisky"], "display": "Whiskey", "hint": "W = ?" },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "S", "right": "Sierra" }, { "left": "T", "right": "Tango" },
+              { "left": "V", "right": "Victor" }, { "left": "Z", "right": "Zulu" }
+            ]},
+            { "type": "fillBlank", "prompt": "Write the code word for the letter Y.", "answers": ["yankee"], "display": "Yankee", "hint": "Y = ?" },
+            { "type": "listening", "audioText": "Sierra", "options": ["November", "Romeo", "Sierra", "Zulu"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Code reading practice",
+          "exercises": [
+            { "type": "info", "title": "Remaining letters and reading a registration", "subtitle": "The last letters:", "items": [
+              { "k": "O", "v": "Oscar" }, { "k": "P", "v": "Papa" }, { "k": "U", "v": "Uniform" }, { "k": "X", "v": "X-ray" }
+            ], "note": "When reading an aircraft registration (e.g. TC-BCA), you say each letter individually using its code word: Bravo Charlie Alfa." },
+            { "type": "fillBlank", "prompt": "How do you say the letter O on the radio?", "answers": ["oscar"], "display": "Oscar", "hint": "O = ?" },
+            { "type": "fillBlank", "prompt": "Write the code word for the letter X.", "answers": ["x-ray", "xray", "x ray"], "display": "X-ray", "hint": "X = ?" },
+            { "type": "wordBank", "prompt": "Read the registration in order: B - C - A", "correctOrder": ["Bravo", "Charlie", "Alfa"], "distractors": ["Delta", "Golf"] },
+            { "type": "wordBank", "prompt": "Read in order: F - L - M", "correctOrder": ["Foxtrot", "Lima", "Mike"], "distractors": ["Golf", "Kilo"] },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "P", "right": "Papa" }, { "left": "U", "right": "Uniform" },
+              { "left": "N", "right": "November" }, { "left": "O", "right": "Oscar" }
+            ]},
+            { "type": "listening", "audioText": "Uniform", "options": ["Oscar", "Papa", "Uniform", "X-ray"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Unit 2 · Basic Radio Phraseology",
+      "subtitle": "Standard words and their meanings",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Roger, Wilco, Affirm",
+          "exercises": [
+            { "type": "info", "title": "Roger", "subtitle": "\"I have received your last message in full.\"", "note": "Careful: Roger does NOT mean \"yes\". It only confirms you heard the message." },
+            { "type": "info", "title": "Other essential words", "subtitle": "The three most commonly used words:", "items": [
+              { "k": "Wilco", "v": "I understand and will comply" },
+              { "k": "Affirm", "v": "Yes" },
+              { "k": "Negative", "v": "No / not permitted" }
+            ], "note": "Wilco is short for \"will comply\"." },
+            { "type": "multipleChoice", "prompt": "What does Roger mean on the radio?", "options": [
+              "Yes, I agree", "I have received your last message in full", "I will comply with the instruction", "I don't understand, say again"
+            ], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What does Wilco mean?", "options": [
+              "I understand and will comply", "Standby", "No", "Say the message again"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Which word means \"yes\" in ICAO phraseology?", "options": ["Roger", "Affirm", "Wilco", "Copy"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What does Negative mean?", "options": [
+              "No / not permitted / incorrect", "Standby", "I received the message", "Continue"
+            ], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match the words with their meanings", "pairs": [
+              { "left": "Roger", "right": "Message received" }, { "left": "Wilco", "right": "Will comply" },
+              { "left": "Affirm", "right": "Yes" }, { "left": "Negative", "right": "No" }
+            ]},
+            { "type": "listening", "audioText": "Wilco", "options": ["Yes", "I understand and will comply", "No / not permitted", "I have received your last message in full"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "Standby, Say again, Correction",
+          "exercises": [
+            { "type": "info", "title": "Four useful words", "subtitle": "Words that help you manage the conversation:", "items": [
+              { "k": "Standby", "v": "Wait, I will call you" },
+              { "k": "Say again", "v": "Repeat what you said" },
+              { "k": "Disregard", "v": "Disregard this message" },
+              { "k": "Correction", "v": "I made an error, the correct one is..." }
+            ]},
+            { "type": "multipleChoice", "prompt": "What does Standby mean?", "options": [
+              "Wait, I will call you", "Repeat the message", "Cancel the instruction", "Understood"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "You didn't understand a message. What do you say?", "options": ["Say again", "Disregard", "Wilco", "Break"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does Disregard mean?", "options": [
+              "Disregard this message", "Read the message back", "I confirm", "Standby"
+            ], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Which word do you use to correct information you just said?", "options": ["Correction", "Confirm", "Roger", "Standby"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Standby", "right": "Wait" }, { "left": "Say again", "right": "Repeat" },
+              { "left": "Disregard", "right": "Disregard" }, { "left": "Correction", "right": "Correction" }
+            ]},
+            { "type": "listening", "audioText": "Disregard", "options": ["Wait, I will call you", "Repeat what you said", "Disregard this message", "I made an error, the correct one is..."], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l3",
+          "title": "Building sentences",
+          "exercises": [
+            { "type": "info", "title": "Now let's build sentences", "subtitle": "Put the words you've learned in the right order to build real radio replies." },
+            { "type": "wordBank", "prompt": "Tower called you; state that you received the message and will comply", "correctOrder": ["Roger", "wilco"], "distractors": ["negative", "standby", "affirm"] },
+            { "type": "wordBank", "prompt": "You didn't hear a message; politely ask for it again", "correctOrder": ["Say", "again", "please"], "distractors": ["roger", "disregard"] },
+            { "type": "wordBank", "prompt": "State that you will wait for the instruction", "correctOrder": ["Standby", "one"], "distractors": ["wilco", "negative", "correction"] },
+            { "type": "listening", "audioText": "Standby", "options": ["Wait, I will call you", "Repeat what you said", "I understand and will comply", "Yes"], "correctIndex": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Unit 3 · Aviation Numbers",
+      "subtitle": "The special radio pronunciation of numbers",
+      "lessons": [
+        {
+          "id": "u3l1",
+          "title": "Tree, Fife, Niner",
+          "exercises": [
+            { "type": "info", "title": "Why are numbers pronounced differently?", "subtitle": "Some numbers sound alike over the radio, so they're pronounced differently:", "items": [
+              { "k": "3", "v": "Tree" }, { "k": "4", "v": "Fower" }, { "k": "5", "v": "Fife" }, { "k": "9", "v": "Niner" }
+            ], "note": "\"Five\" and \"nine\" can get lost in static, so they're said as \"fife\" and \"niner\"." },
+            { "type": "fillBlank", "prompt": "How is the number 3 said on the radio?", "answers": ["tree"], "display": "Tree", "hint": "3 = ?" },
+            { "type": "fillBlank", "prompt": "How do you say the number 9 on the radio?", "answers": ["niner"], "display": "Niner", "hint": "9 = ?" },
+            { "type": "fillBlank", "prompt": "How is the number 5 said on the radio?", "answers": ["fife"], "display": "Fife", "hint": "5 = ?" },
+            { "type": "matchPairs", "prompt": "Match the numbers with their pronunciations", "pairs": [
+              { "left": "3", "right": "Tree" }, { "left": "4", "right": "Fower" },
+              { "left": "5", "right": "Fife" }, { "left": "9", "right": "Niner" }
+            ]},
+            { "type": "listening", "audioText": "Niner", "options": ["3", "4", "5", "9"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u3l2",
+          "title": "Reading Altitudes and Headings",
+          "exercises": [
+            { "type": "info", "title": "Numbers are read digit by digit", "subtitle": "Headings and altitudes are never read as a whole number — each digit is said on its own:", "items": [
+              { "k": "090", "v": "Zero niner zero" }, { "k": "270", "v": "Two seven zero" },
+              { "k": "360", "v": "Tree six zero" }, { "k": "FL350", "v": "Flight level tree fife zero" }
+            ], "note": "This is why 3, 5, and 9 have their own special pronunciation — you'll hear them constantly in headings and altitudes." },
+            { "type": "fillBlank", "prompt": "How do you read heading 090 on the radio?", "answers": ["zero niner zero"], "display": "Zero niner zero", "hint": "0-9-0 = ?" },
+            { "type": "fillBlank", "prompt": "How do you read flight level 350?", "answers": ["tree fife zero"], "display": "Tree fife zero", "hint": "3-5-0 = ?" },
+            { "type": "wordBank", "prompt": "Read heading 270 in order", "correctOrder": ["Two", "seven", "zero"], "distractors": ["Tree", "niner"] },
+            { "type": "matchPairs", "prompt": "Match the heading with its spoken form", "pairs": [
+              { "left": "090", "right": "Zero niner zero" }, { "left": "180", "right": "One eight zero" },
+              { "left": "270", "right": "Two seven zero" }, { "left": "360", "right": "Tree six zero" }
+            ]},
+            { "type": "listening", "audioText": "Tree six zero", "options": ["090", "180", "270", "360"], "correctIndex": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Unit 4 · Taxi, Takeoff & Landing Clearances",
+      "subtitle": "The phraseology used to move on the ground and fly the pattern",
+      "lessons": [
+        {
+          "id": "u4l1",
+          "title": "Taxi and Ground Clearances",
+          "exercises": [
+            { "type": "info", "title": "Getting to the runway", "subtitle": "Key words for ground movement:", "items": [
+              { "k": "Taxi", "v": "Move the aircraft on the ground under its own power" },
+              { "k": "Holding point", "v": "The point before the runway where you wait for clearance" },
+              { "k": "Line up", "v": "Enter the runway and hold position" },
+              { "k": "Cleared to taxi", "v": "Permission to move on the ground to the runway" }
+            ], "note": "You must stop at the holding point until you're cleared to enter the runway." },
+            { "type": "multipleChoice", "prompt": "What does \"cleared to taxi\" mean?", "options": ["Permission to move on the ground to the runway", "Permission to take off", "Permission to land", "Permission to park"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What is a Holding point?", "options": ["The gate area", "The point before the runway where you wait for clearance", "The parking stand", "The fuel truck location"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Taxi", "right": "Move on the ground" }, { "left": "Holding point", "right": "Wait before the runway" },
+              { "left": "Line up", "right": "Enter and hold" }, { "left": "Cleared to taxi", "right": "Permission to move" }
+            ]},
+            { "type": "wordBank", "prompt": "Build the instruction: proceed to wait before the runway", "correctOrder": ["Taxi", "to", "holding", "point"], "distractors": ["Cleared", "for", "takeoff"] },
+            { "type": "listening", "audioText": "Holding point", "options": ["Move the aircraft on the ground", "The point before the runway where you wait", "Enter the runway and hold", "Permission to move on the ground"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u4l2",
+          "title": "Takeoff and Departure Clearances",
+          "exercises": [
+            { "type": "info", "title": "From the runway into the air", "subtitle": "Key words for takeoff:", "items": [
+              { "k": "Cleared for takeoff", "v": "Permission to begin the takeoff roll" },
+              { "k": "Line up and wait", "v": "Enter the runway, hold position, do not take off yet" },
+              { "k": "Squawk", "v": "The code you set on your transponder" },
+              { "k": "Departure frequency", "v": "The frequency to contact after takeoff" }
+            ]},
+            { "type": "multipleChoice", "prompt": "What does \"Line up and wait\" mean?", "options": ["Enter the runway and take off immediately", "Enter the runway and hold position, don't take off yet", "Wait at the holding point", "Taxi back to the gate"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What is a Squawk code?", "options": ["A weather report", "A code you set on your transponder", "A runway number", "A radio frequency"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Cleared for takeoff", "right": "Permission to roll" }, { "left": "Line up and wait", "right": "Hold on the runway" },
+              { "left": "Squawk", "right": "Transponder code" }, { "left": "Departure frequency", "right": "Contact after takeoff" }
+            ]},
+            { "type": "fillBlank", "prompt": "What do you call permission to begin the takeoff roll?", "answers": ["cleared for takeoff"], "display": "Cleared for takeoff", "hint": "Permission to roll = ?" },
+            { "type": "listening", "audioText": "Squawk", "options": ["Permission to begin the takeoff roll", "Enter the runway, hold position", "The code you set on your transponder", "The frequency to contact after takeoff"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u4l3",
+          "title": "Landing Clearances and Readback Rules",
+          "exercises": [
+            { "type": "info", "title": "Coming back down", "subtitle": "Key words for landing:", "items": [
+              { "k": "Cleared to land", "v": "Permission to land" },
+              { "k": "Go around", "v": "Abandon the approach and climb away" },
+              { "k": "Readback", "v": "Repeating a clearance back to ATC to confirm it" },
+              { "k": "Final", "v": "The last, straight segment of the approach before landing" }
+            ], "note": "Readback isn't optional for important clearances — ATC needs to hear you got it right." },
+            { "type": "multipleChoice", "prompt": "What does \"Go around\" mean?", "options": ["Land immediately", "Abandon the approach and climb away", "Taxi around the airport", "Wait at the holding point"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Why do pilots do a Readback?", "options": ["To confirm they received the clearance correctly", "To ask a question", "To declare an emergency", "To request fuel"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Cleared to land", "right": "Permission to land" }, { "left": "Go around", "right": "Climb away" },
+              { "left": "Readback", "right": "Confirm the clearance" }, { "left": "Final", "right": "Last approach segment" }
+            ]},
+            { "type": "wordBank", "prompt": "Build the clearance: permission to land on runway two seven", "correctOrder": ["Cleared", "to", "land"], "distractors": ["Cleared", "for", "takeoff"] },
+            { "type": "listening", "audioText": "Go around", "options": ["Permission to land", "Abandon the approach and climb away", "Repeating a clearance back to ATC", "The last segment of the approach"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Unit 5 · Emergency & Urgency Phraseology",
+      "subtitle": "How to declare and describe an emergency on the radio",
+      "lessons": [
+        {
+          "id": "u5l1",
+          "title": "Mayday vs Pan-Pan",
+          "exercises": [
+            { "type": "info", "title": "Two levels of urgency", "subtitle": "Both are said three times in a row, but they mean different things:", "items": [
+              { "k": "Mayday", "v": "Grave and imminent danger — a distress call" },
+              { "k": "Pan-Pan", "v": "An urgent situation, but not immediate danger to life" }
+            ], "note": "Mayday, Mayday, Mayday — Pan-Pan, Pan-Pan, Pan-Pan. Always three times." },
+            { "type": "multipleChoice", "prompt": "When do you say \"Mayday\"?", "options": ["Grave and imminent danger", "A minor technical issue", "You're running slightly late", "You need a frequency change"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "How many times is Mayday said in a row?", "options": ["Once", "Twice", "Three times", "Five times"], "correctIndex": 2 },
+            { "type": "multipleChoice", "prompt": "What does Pan-Pan indicate?", "options": ["Grave and imminent danger", "Urgency, but not immediate danger to life", "Routine traffic", "Weather delay"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Mayday", "right": "Distress, grave danger" }, { "left": "Pan-Pan", "right": "Urgent, not life-threatening" }
+            ]},
+            { "type": "listening", "audioText": "Pan-Pan", "options": ["Grave and imminent danger", "An urgent situation, but not immediate danger", "Routine handover", "Standard readback"], "correctIndex": 1 }
+          ]
+        },
+        {
+          "id": "u5l2",
+          "title": "Declaring an Emergency",
+          "exercises": [
+            { "type": "info", "title": "What ATC needs to know", "subtitle": "After Mayday or Pan-Pan, give this information:", "items": [
+              { "k": "Souls on board", "v": "Total number of people on the aircraft" },
+              { "k": "Fuel remaining", "v": "How much fuel is left, usually in time" },
+              { "k": "Nature of the emergency", "v": "What kind of problem you have" },
+              { "k": "Request priority landing", "v": "Asking to land before other traffic" }
+            ]},
+            { "type": "multipleChoice", "prompt": "What does \"souls on board\" mean?", "options": ["Total number of people on the aircraft", "The pilot's name", "The aircraft's registration", "The cargo weight"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Why state fuel remaining in an emergency?", "options": ["So ATC knows how much time you have", "To request more fuel", "It's not important", "To confirm the aircraft type"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Souls on board", "right": "Number of people" }, { "left": "Fuel remaining", "right": "Time left" },
+              { "left": "Nature of emergency", "right": "The problem" }, { "left": "Priority landing", "right": "Land before others" }
+            ]},
+            { "type": "fillBlank", "prompt": "What do you call the total number of people on board?", "answers": ["souls on board"], "display": "Souls on board", "hint": "Total people = ?" },
+            { "type": "listening", "audioText": "Souls on board", "options": ["How much fuel is left", "Total number of people on the aircraft", "What kind of problem you have", "Asking to land before others"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "Unit 6 · Weather Phraseology",
+      "subtitle": "Reading and reporting basic weather over the radio",
+      "lessons": [
+        {
+          "id": "u6l1",
+          "title": "Basic Weather Phrases",
+          "exercises": [
+            { "type": "info", "title": "Weather words you'll hear often", "subtitle": "Core terms for briefings and reports:", "items": [
+              { "k": "METAR", "v": "A routine aviation weather report" },
+              { "k": "Ceiling", "v": "The height of the lowest cloud layer covering most of the sky" },
+              { "k": "Visibility", "v": "How far you can see" },
+              { "k": "Overcast", "v": "The sky is completely covered by cloud" }
+            ]},
+            { "type": "multipleChoice", "prompt": "What is a METAR?", "options": ["A routine aviation weather report", "A type of clearance", "A radio frequency", "An emergency call"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "What does Ceiling mean?", "options": ["The top of the aircraft", "The height of the lowest cloud layer covering the sky", "The maximum altitude allowed", "The runway length"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "METAR", "right": "Weather report" }, { "left": "Ceiling", "right": "Cloud base height" },
+              { "left": "Visibility", "right": "How far you can see" }, { "left": "Overcast", "right": "Fully cloud-covered sky" }
+            ]},
+            { "type": "fillBlank", "prompt": "What word means the sky is completely covered by cloud?", "answers": ["overcast"], "display": "Overcast", "hint": "Fully covered sky = ?" },
+            { "type": "listening", "audioText": "Overcast", "options": ["A routine aviation weather report", "The height of the lowest cloud layer", "How far you can see", "The sky is completely covered by cloud"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u6l2",
+          "title": "Wind and Visibility Reports",
+          "exercises": [
+            { "type": "info", "title": "Reading a wind report", "subtitle": "Wind is given as direction, then speed:", "items": [
+              { "k": "270 at 15", "v": "Wind from 270°, speed 15 knots" },
+              { "k": "Gusting", "v": "The wind speed increases suddenly for short periods" },
+              { "k": "Crosswind", "v": "Wind blowing across the runway, not along it" },
+              { "k": "Runway in use", "v": "Which runway is currently active" }
+            ], "note": "\"Wind two seven zero at one five\" means direction 270°, speed 15 knots." },
+            { "type": "fillBlank", "prompt": "How do you read wind \"270 at 15\" on the radio?", "answers": ["two seven zero at one five"], "display": "Two seven zero at one five", "hint": "270 at 15 = ?" },
+            { "type": "multipleChoice", "prompt": "What does Gusting mean?", "options": ["Steady, unchanging wind", "The wind speed increases suddenly for short periods", "No wind at all", "Wind direction is unknown"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "What is a Crosswind?", "options": ["Wind blowing along the runway", "Wind blowing across the runway", "No wind", "A tailwind"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Match", "pairs": [
+              { "left": "Gusting", "right": "Sudden increase" }, { "left": "Crosswind", "right": "Blows across runway" },
+              { "left": "Runway in use", "right": "Currently active runway" }, { "left": "270 at 15", "right": "Direction and speed" }
+            ]},
+            { "type": "listening", "audioText": "Crosswind", "options": ["Steady wind", "Wind blowing along the runway", "Wind blowing across the runway", "No wind"], "correctIndex": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

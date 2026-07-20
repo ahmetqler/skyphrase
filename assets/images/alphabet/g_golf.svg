@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#0E3B2E"/>
+
+<path d="M30 420 Q205 320 380 420 L380 440 L30 440 Z" fill="#2E8B6A"/>
+<rect x="235" y="120" width="7" height="255" fill="#F5EFE0"/>
+<path d="M242 125 L320 150 L242 175 Z" fill="#E24B4A"/>
+<ellipse cx="238" cy="378" rx="26" ry="8" fill="#0A2B21"/>
+<circle cx="140" cy="360" r="26" fill="#FFFFFF"/>
+<circle cx="132" cy="352" r="3" fill="#D3D1C7"/>
+<circle cx="146" cy="356" r="3" fill="#D3D1C7"/>
+<circle cx="138" cy="368" r="3" fill="#D3D1C7"/>
+<circle cx="150" cy="366" r="3" fill="#D3D1C7"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Golf</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#9FE1CB">G &#183; GOLF</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 600">
+<rect x="0" y="0" width="410" height="600" rx="24" fill="#0C447C"/>
+
+<path d="M120 380 L290 140 Q305 118 322 132 Q338 148 320 165 L150 400 Z" fill="#C77B2E"/>
+<rect x="108" y="378" width="34" height="34" rx="17" fill="#8A5A2B" transform="rotate(-35 125 395)"/>
+<circle cx="150" cy="185" r="65" fill="#FFFFFF"/>
+<path d="M105 140 Q130 185 105 230" fill="none" stroke="#E24B4A" stroke-width="6" stroke-linecap="round"/>
+<path d="M195 140 Q170 185 195 230" fill="none" stroke="#E24B4A" stroke-width="6" stroke-linecap="round"/>
+<path d="M108 152 L120 158 M104 178 L118 180 M104 200 L118 198 M110 222 L122 214" stroke="#E24B4A" stroke-width="4" stroke-linecap="round"/>
+<path d="M192 152 L180 158 M196 178 L182 180 M196 200 L182 198 M190 222 L178 214" stroke="#E24B4A" stroke-width="4" stroke-linecap="round"/>
+
+<text x="205" y="510" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Yankee</text>
+<text x="205" y="552" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#B5D4F4">Y &#183; YANG-key</text>
+</svg>

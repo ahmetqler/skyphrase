@@ -1,0 +1,166 @@
+{
+  "id": "aviation_technical_tr",
+  "title": "Teknik Havacılık İngilizcesi",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Ünite 1 · Uçak Yapısı Temelleri",
+      "subtitle": "Ana yapı bileşenlerinin İngilizce terimleri",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Ana Yapı Bileşenleri",
+          "exercises": [
+            { "type": "info", "title": "Uçağın ana bölümleri", "subtitle": "Her bakım dokümanında (AMM) geçen temel terimler:", "items": [
+              { "k": "Fuselage", "v": "Gövde" }, { "k": "Wing", "v": "Kanat" }, { "k": "Empennage", "v": "Kuyruk grubu" },
+              { "k": "Cockpit", "v": "Kokpit" }, { "k": "Landing gear", "v": "İniş takımı" }
+            ], "note": "Bu terimler tüm bakım kılavuzlarında İngilizce geçer." },
+            { "type": "multipleChoice", "prompt": "Uçağın gövdesine İngilizce ne denir?", "options": ["Fuselage", "Wing", "Empennage", "Cockpit"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Empennage ne anlama gelir?", "options": ["Kanat", "Kuyruk grubu", "İniş takımı", "Gövde"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Fuselage", "right": "Gövde" }, { "left": "Wing", "right": "Kanat" },
+              { "left": "Cockpit", "right": "Kokpit" }, { "left": "Landing gear", "right": "İniş takımı" }
+            ]},
+            { "type": "fillBlank", "prompt": "Kuyruk grubuna İngilizce ne denir?", "answers": ["empennage"], "display": "Empennage", "hint": "Kuyruk grubu = ?" },
+            { "type": "listening", "audioText": "Empennage", "options": ["Gövde", "Kanat", "Kuyruk grubu", "Kokpit"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Uçuş Kontrol Yüzeyleri",
+          "exercises": [
+            { "type": "info", "title": "Kontrol yüzeyleri", "subtitle": "Uçağı yönlendiren hareketli parçalar:", "items": [
+              { "k": "Aileron", "v": "Kanatçık (yatış kontrolü)" }, { "k": "Elevator", "v": "İrtifa dümeni" },
+              { "k": "Rudder", "v": "İstikamet dümeni" }, { "k": "Flap", "v": "Flap (kaldırma artırıcı)" }
+            ], "note": "Bu yüzeyler hidrolik ya da elektrik sistemleriyle hareket eder." },
+            { "type": "multipleChoice", "prompt": "Aileron neyi kontrol eder?", "options": ["Yatış (roll)", "İrtifa (pitch)", "İstikamet (yaw)", "Hız"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Rudder hangi eksende kontrol sağlar?", "options": ["Yatış", "İrtifa", "İstikamet", "Kalkış"], "correctIndex": 2 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Aileron", "right": "Kanatçık" }, { "left": "Elevator", "right": "İrtifa dümeni" },
+              { "left": "Rudder", "right": "İstikamet dümeni" }, { "left": "Flap", "right": "Flap" }
+            ]},
+            { "type": "fillBlank", "prompt": "İrtifa dümenine İngilizce ne denir?", "answers": ["elevator"], "display": "Elevator", "hint": "İrtifa dümeni = ?" },
+            { "type": "listening", "audioText": "Rudder", "options": ["Kanatçık (yatış kontrolü)", "İrtifa dümeni", "İstikamet dümeni", "Flap (kaldırma artırıcı)"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l3",
+          "title": "Sistemler",
+          "exercises": [
+            { "type": "info", "title": "Temel sistemler", "subtitle": "Bakımda sık geçen sistem adları:", "items": [
+              { "k": "Hydraulic system", "v": "Hidrolik sistem" }, { "k": "Avionics", "v": "Aviyonik (elektronik sistemler)" },
+              { "k": "Powerplant", "v": "Motor grubu" }, { "k": "Fuel system", "v": "Yakıt sistemi" }
+            ]},
+            { "type": "multipleChoice", "prompt": "Avionics ne anlama gelir?", "options": ["Motor grubu", "Elektronik sistemler", "Yakıt sistemi", "Hidrolik sistem"], "correctIndex": 1 },
+            { "type": "multipleChoice", "prompt": "Powerplant terimi neyi ifade eder?", "options": ["Motor grubu", "Kanat", "Kuyruk", "Gövde"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Hydraulic system", "right": "Hidrolik sistem" }, { "left": "Avionics", "right": "Aviyonik" },
+              { "left": "Powerplant", "right": "Motor grubu" }, { "left": "Fuel system", "right": "Yakıt sistemi" }
+            ]},
+            { "type": "wordBank", "prompt": "Kelimeleri sırala: Yakıt sistemi", "correctOrder": ["Fuel", "system"], "distractors": ["Hydraulic", "Avionics"] },
+            { "type": "listening", "audioText": "Powerplant", "options": ["Hidrolik sistem", "Aviyonik (elektronik sistemler)", "Motor grubu", "Yakıt sistemi"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u1l4",
+          "title": "Bakım Kısaltmaları",
+          "exercises": [
+            { "type": "info", "title": "Sık kullanılan kısaltmalar", "subtitle": "Teknik dokümanlarda her yerde karşına çıkacak:", "items": [
+              { "k": "MEL", "v": "Minimum Equipment List (Asgari Teçhizat Listesi)" },
+              { "k": "AD", "v": "Airworthiness Directive (Uçuşa Elverişlilik Direktifi)" },
+              { "k": "SB", "v": "Service Bulletin (Servis Bülteni)" },
+              { "k": "NDT", "v": "Non-Destructive Testing (Tahribatsız Muayene)" }
+            ], "note": "Dokümanlarda genelde açık halini değil, kısaltmayı görürsün." },
+            { "type": "multipleChoice", "prompt": "AD kısaltması ne anlama gelir?", "options": ["Airworthiness Directive", "Aircraft Design", "Avionics Data", "Aircraft Delivery"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "NDT ne için kullanılır?", "options": ["Parçayı bozmadan muayene etmek", "Yeni parça sipariş etmek", "Uçuş planı hazırlamak", "Yakıt ölçmek"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "MEL", "right": "Asgari Teçhizat Listesi" }, { "left": "AD", "right": "Uçuşa Elverişlilik Direktifi" },
+              { "left": "SB", "right": "Servis Bülteni" }, { "left": "NDT", "right": "Tahribatsız Muayene" }
+            ]},
+            { "type": "fillBlank", "prompt": "Servis Bülteni'nin kısaltması nedir?", "answers": ["sb"], "display": "SB", "hint": "Servis Bülteni = ?" },
+            { "type": "listening", "audioText": "Airworthiness Directive", "options": ["MEL", "AD", "SB", "NDT"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Ünite 2 · Motor ve Bakım Uygulamaları",
+      "subtitle": "Motor parçaları, el aletleri ve bakım işlerinin nasıl belgelendiği",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Motor Bileşenleri",
+          "exercises": [
+            { "type": "info", "title": "Türbin motorunun içi", "subtitle": "Havanın sırayla geçtiği ana bölümler:", "items": [
+              { "k": "Compressor", "v": "Gelen havayı sıkıştırır" }, { "k": "Combustion chamber", "v": "Yakıtın yandığı yer" },
+              { "k": "Turbine", "v": "Egzoz gazından enerji çeker" }, { "k": "Nacelle", "v": "Motorun dış kaplaması" }
+            ], "note": "Hava şu sırayla geçer: compressor, combustion chamber, turbine." },
+            { "type": "multipleChoice", "prompt": "Compressor ne yapar?", "options": ["Gelen havayı sıkıştırır", "Yakıtı yakar", "Motoru soğutur", "Yakıt depolar"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Yakıt tam olarak nerede yanar?", "options": ["Compressor", "Combustion chamber", "Nacelle", "Turbine"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Compressor", "right": "Havayı sıkıştırır" }, { "left": "Combustion chamber", "right": "Yakıt yanar" },
+              { "left": "Turbine", "right": "Enerji çeker" }, { "left": "Nacelle", "right": "Motor kaplaması" }
+            ]},
+            { "type": "fillBlank", "prompt": "Motorun dış kaplamasına İngilizce ne denir?", "answers": ["nacelle"], "display": "Nacelle", "hint": "Dış kaplama = ?" },
+            { "type": "listening", "audioText": "Turbine", "options": ["Gelen havayı sıkıştırır", "Yakıtın yandığı yer", "Egzoz gazından enerji çeker", "Motorun dış kaplaması"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "İniş Takımı ve Frenler",
+          "exercises": [
+            { "type": "info", "title": "İniş takımı terimleri", "subtitle": "Tekerlekler, bacaklar ve frenler için kullanılan kelimeler:", "items": [
+              { "k": "Strut", "v": "İniş takımının ana taşıyıcı bacağı" }, { "k": "Shock absorber", "v": "İniş darbesini yumuşatır" },
+              { "k": "Brake assembly", "v": "Tekerleğin dönmesini durdurur" }, { "k": "Retract", "v": "İniş takımını uçağın içine çekmek" }
+            ], "note": "\"Extend\" ise tam tersi — iniş için takımı indirmek." },
+            { "type": "multipleChoice", "prompt": "Shock absorber ne yapar?", "options": ["İniş darbesini yumuşatır", "Tekerleği durdurur", "Burun tekerleğini yönlendirir", "Lastiği şişirir"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "İniş takımı için \"retract\" ne demek?", "options": ["İniş için indirmek", "Uçağın içine çekmek", "Muayene etmek", "Değiştirmek"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Strut", "right": "Ana taşıyıcı bacak" }, { "left": "Shock absorber", "right": "Darbeyi yumuşatır" },
+              { "left": "Brake assembly", "right": "Tekerleği durdurur" }, { "left": "Retract", "right": "İçine çekmek" }
+            ]},
+            { "type": "fillBlank", "prompt": "İniş takımının ana taşıyıcı bacağına İngilizce ne denir?", "answers": ["strut"], "display": "Strut", "hint": "Taşıyıcı bacak = ?" },
+            { "type": "listening", "audioText": "Retract", "options": ["İniş darbesini yumuşatır", "Tekerleğin dönmesini durdurur", "Ana taşıyıcı bacak", "İniş takımını uçağın içine çekmek"], "correctIndex": 3 }
+          ]
+        },
+        {
+          "id": "u2l3",
+          "title": "El Aletleri ve Bağlantı Elemanları",
+          "exercises": [
+            { "type": "info", "title": "Sık kullanılan aletler ve bağlantı elemanları", "subtitle": "Hangarda sık duyacağın kelimeler:", "items": [
+              { "k": "Torque wrench", "v": "Bir bağlantıyı tam değerinde sıkar" }, { "k": "Rivet", "v": "Kalıcı bir metal bağlantı elemanı" },
+              { "k": "Cotter pin", "v": "Somunu döndürmeyecek şekilde kilitler" }, { "k": "Safety wire", "v": "Bağlantı elemanlarının gevşemesini önler" }
+            ]},
+            { "type": "multipleChoice", "prompt": "Torque wrench ne için kullanılır?", "options": ["Bir bağlantıyı tam değerinde sıkmak", "Delik açmak", "Yakıt ölçmek", "Metal kesmek"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Safety wire ne yapar?", "options": ["Somunu kilitler", "Bağlantı elemanlarının gevşemesini önler", "Elektrik iletir", "Yakıt tankını mühürler"], "correctIndex": 1 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Torque wrench", "right": "Tam değerinde sıkar" }, { "left": "Rivet", "right": "Kalıcı bağlantı" },
+              { "left": "Cotter pin", "right": "Somunu kilitler" }, { "left": "Safety wire", "right": "Gevşemeyi önler" }
+            ]},
+            { "type": "fillBlank", "prompt": "Kalıcı bir metal bağlantı elemanına İngilizce ne denir?", "answers": ["rivet"], "display": "Rivet", "hint": "Kalıcı bağlantı = ?" },
+            { "type": "listening", "audioText": "Cotter pin", "options": ["Bir bağlantıyı tam değerinde sıkar", "Kalıcı bir metal bağlantı elemanı", "Somunu döndürmeyecek şekilde kilitler", "Bağlantı elemanlarının gevşemesini önler"], "correctIndex": 2 }
+          ]
+        },
+        {
+          "id": "u2l4",
+          "title": "Bakım Dokümantasyonu ve Muayeneler",
+          "exercises": [
+            { "type": "info", "title": "Her gün karşılaşacağın evraklar", "subtitle": "Temel dokümantasyon terimleri:", "items": [
+              { "k": "Work order", "v": "Bir bakım işi için talimatlar" }, { "k": "Logbook", "v": "Uçağın bakım geçmişini kaydeder" },
+              { "k": "Discrepancy", "v": "Kayıtlı bir arıza veya uygunsuzluk" }, { "k": "A-check / C-check", "v": "Planlı muayene seviyeleri" }
+            ], "note": "Uçak tekrar uçmadan önce her discrepancy kayıt altına alınıp kapatılmalıdır." },
+            { "type": "multipleChoice", "prompt": "Discrepancy nedir?", "options": ["Kayıtlı bir arıza veya uygunsuzluk", "Yeni parça siparişi", "Bir uçuş planı", "Bir yakıt fişi"], "correctIndex": 0 },
+            { "type": "multipleChoice", "prompt": "Logbook ne için kullanılır?", "options": ["Uçağın bakım geçmişini kaydetmek", "Uçak bileti almak", "Alet sipariş etmek", "Mürettebat planlamak"], "correctIndex": 0 },
+            { "type": "matchPairs", "prompt": "Eşleştir", "pairs": [
+              { "left": "Work order", "right": "İş talimatları" }, { "left": "Logbook", "right": "Bakım geçmişi" },
+              { "left": "Discrepancy", "right": "Kayıtlı arıza" }, { "left": "A-check", "right": "Planlı muayene" }
+            ]},
+            { "type": "fillBlank", "prompt": "Kayıtlı bir arıza veya uygunsuzluğa İngilizce ne denir?", "answers": ["discrepancy"], "display": "Discrepancy", "hint": "Kayıtlı arıza = ?" },
+            { "type": "listening", "audioText": "Work order", "options": ["Uçağın bakım geçmişini kaydeder", "Bir bakım işi için talimatlar", "Kayıtlı bir arıza veya uygunsuzluk", "Planlı bir muayene seviyesi"], "correctIndex": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}
