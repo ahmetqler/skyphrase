@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
 enum _PlaneKind { concorde, a380, cessna }
-enum _RouteMode { line, curved, heart, flag }
+enum _RouteMode { line, curved, heart, show }
+
+/// Bir gösteri uçağının, ekran kesri uzayında zamana göre konumu — girişi,
+/// icrası ve çıkışı tek bir kapalı fonksiyonda taşır (bkz. _piecewiseShowPos).
+typedef _PosFn = Offset Function(double t);
 
 /// Uygulama genelinde arka planda uçan, iz bırakan minik uçaklar
 /// (FlightRadar24'teki uçuş izlerine gönderme). Tamamen dekoratif; hiçbir
@@ -36,17 +40,18 @@ class _PlaneRoute {
   // oranlı ölçeği.
   final Offset heartCenter;
   final double heartScale;
-  // Bayrak (ay yıldız) gösterisi modu: merkez (ekran kesri), ölçek ve bu
-  // uçağın toplam yolun hangi [flagTStart, flagTEnd] aralığından sorumlu
-  // olduğu — her uçak farklı bir parçayı çizer, hepsi farklı noktalardan
-  // aynı anda başlar (bkz. _triggerShow).
-  final Offset flagCenter;
-  final double flagScale;
-  final double flagTStart;
-  final double flagTEnd;
+  // Periyodik gösteri modu (ay yıldız / kanat açılımı / DNA): bu uçağın
+  // giriş+icra+çıkışını tek bir fonksiyonda taşıyan, ekran kesri uzayında
+  // önceden üretilmiş konum fonksiyonu, artı izin SADECE icra aralığında
+  // ([showTrailStart, showTrailEnd]) çizilmesi için sınırlar — giriş/çıkış
+  // uçuşları ekranda görünür bir iz bırakmasın diye (bkz. _triggerShow,
+  // _ShowTrailPainter).
+  final _PosFn? showPos;
+  final double showTrailStart;
+  final double showTrailEnd;
   // Eğrisel/çembersel rota modu: ekran kesri uzayında önceden üretilmiş,
-  // düz + çembersel dönüş + düz (yeni yönde) parçalarından oluşan tek bir
-  // yol (bkz. _buildCurvedRoutePoints).
+  // düz + çembersel dönüş (çeyrek/yarım/tam tur) + düz (dönüşün bıraktığı
+  // yeni yönde) parçalarından oluşan tek bir yol (bkz. _buildCurvedRoutePoints).
   final _PolylinePath? curvedPath;
   const _PlaneRoute({
     required this.kind,
@@ -57,10 +62,9 @@ class _PlaneRoute {
     this.end = Offset.zero,
     this.heartCenter = Offset.zero,
     this.heartScale = 0,
-    this.flagCenter = Offset.zero,
-    this.flagScale = 0,
-    this.flagTStart = 0,
-    this.flagTEnd = 1,
+    this.showPos,
+    this.showTrailStart = 0,
+    this.showTrailEnd = 1,
     this.curvedPath,
   });
 }
@@ -196,11 +200,12 @@ List<Offset> _buildStarUnitPoints() {
 
 /// Türk bayrağındaki "ay yıldız"ı tek bir sürekli rotada birleştirir: önce
 /// hilal, sonra (hilalin açık ağzının içine, sağa ve küçük ölçekte
-/// yerleştirilmiş) yıldız. Uçaklar SoloTürk gösterisi gibi hep aynı
-/// noktadan başlayıp bu rotayı birlikte "çizer" (bkz. _FlightTrailsBackgroundState
-/// içindeki periyodik gösteri tetikleyicisi). Ham köşeler [_chaikinSmooth]
-/// ile hafifçe yumuşatılır — yıldızın uçları tanınabilir kalsın diye sadece
-/// 2 tekrar (kalp/yazıdan daha az).
+/// yerleştirilmiş) yıldız. Periyodik gösteri sırasında (bkz. _triggerShow,
+/// _buildFlagShowPosFns) her uçak bu hattın kendi payına düşen bir
+/// parçasını çizer — hepsi kendi ekran dışı noktasından sıra sıra girer,
+/// tek bir ortak başlangıç noktası yoktur. Ham köşeler [_chaikinSmooth] ile
+/// hafifçe yumuşatılır — yıldızın uçları tanınabilir kalsın diye sadece 2
+/// tekrar (kalp/yazıdan daha az).
 List<Offset> _buildFlagUnitPoints() {
   final points = <Offset>[..._buildCrescentUnitPoints()];
   const starScale = 0.45;
@@ -218,13 +223,6 @@ Offset _flagPoint(double t, Offset center, double scale) {
   return center + local * scale;
 }
 
-double _flagAngle(double t, Offset center, double scale) {
-  const eps = 0.003;
-  final p1 = _flagPoint((t - eps).clamp(0.0, 1.0), center, scale);
-  final p2 = _flagPoint((t + eps).clamp(0.0, 1.0), center, scale);
-  return (p2 - p1).direction;
-}
-
 /// Ekran kesri uzayında, görünür alanın hemen dışında (kenarın [margin]
 /// kadar ötesinde) rastgele bir nokta — uçaklar ekranın ortasında bir
 /// yerde belirmesin, gerçek bir uçuş takip sitesindeki gibi kenardan
@@ -240,12 +238,93 @@ Offset _offscreenPoint(math.Random rnd) {
   };
 }
 
-/// Bazı uçaklar için düz gitmek yerine: düz bir giriş, ardından bir
-/// noktada tam bir çembersel dönüş (döngü), sonra tamamen farklı bir
-/// yöndeki çıkışa doğru düz bir devam — ekran kesri uzayında, tek bir
-/// sürekli nokta dizisi olarak. Düz-çembere ve çember-düze geçişteki
-/// köşeler [_chaikinSmooth] ile yumuşatılır.
-List<Offset> _buildCurvedRoutePoints(Offset start, Offset loopEntry, Offset end, math.Random rnd) {
+/// [from] noktasından birim [dir] yönünde ilerleyen bir uçağın,
+/// [_offscreenPoint] ile aynı kenar payını (margin) kullanarak ekranın
+/// tamamen dışına çıkana kadar alması gereken mesafe — ışın/kutu kesişimi
+/// (ekran kesri [-margin, 1+margin] aralığının hangi kenarına önce
+/// çarpacağını bulur). Böylece döngüden çıkan uçak, tıpkı düz rotalardaki
+/// gibi gerçekten ekranın dışına çıkarak kaybolur.
+double _rayExitDistance(Offset from, Offset dir, {double margin = 0.15}) {
+  double axisT(double p, double d, double lo, double hi) {
+    if (d > 1e-9) return (hi - p) / d;
+    if (d < -1e-9) return (lo - p) / d;
+    return double.infinity;
+  }
+
+  final tx = axisT(from.dx, dir.dx, -margin, 1 + margin);
+  final ty = axisT(from.dy, dir.dy, -margin, 1 + margin);
+  final t = math.min(tx, ty);
+  return t.isFinite && t > 0 ? t : 0.3;
+}
+
+/// [_buildArc]'ın sonucu: örneklenmiş yay noktaları (giriş noktası hariç,
+/// çıkış noktası dahil) artı çıkıştaki gerçek konum/teğet yön — sonrasına
+/// düz bir devam eklenecekse bu ikisi yeterli.
+class _ArcResult {
+  final List<Offset> points;
+  final Offset exitPoint;
+  final Offset exitTangent;
+  const _ArcResult({required this.points, required this.exitPoint, required this.exitTangent});
+}
+
+/// [entryPoint]'ten [entryTangent] yönünde gelen bir uçağın, [radius]
+/// yarıçapında ve [sweepFraction] kadar (1.0 = tam tur, 0.5 = yarım, 0.25 =
+/// çeyrek) çembersel bir dönüş yapmasını sağlayan noktalar. [side] dönüşün
+/// yönünü seçer: +1 girişe göre SOLA, -1 SAĞA kıvrılan bir yay üretir (bu,
+/// [entryTangent] ekran kesri uzayında +y aşağı bakacak şekilde
+/// hesaplanmıştır — örn. entryTangent=(0,1) iken side=-1 çıkışta tam sağa
+/// (1,0) yönlendirir). Giriş açısı her zaman [entryTangent] ile teğet-
+/// süreklidir; bu yüzden dönüş öncesi/sonrası hiçbir kırılma olmaz.
+_ArcResult _buildArc({
+  required Offset entryPoint,
+  required Offset entryTangent,
+  required double radius,
+  required double sweepFraction,
+  required double side,
+  int steps = 40,
+}) {
+  final fwd = entryTangent;
+  final perp = Offset(-fwd.dy, fwd.dx);
+  final center = entryPoint + perp * radius * side;
+  final startAngle = (entryPoint - center).direction;
+  final sweep = 2 * math.pi * sweepFraction * side;
+  final n = math.max(6, (steps * sweepFraction).round());
+  final points = <Offset>[];
+  var exitPoint = entryPoint;
+  for (var i = 1; i <= n; i++) {
+    final a = startAngle + sweep * i / n;
+    exitPoint = center + Offset(math.cos(a), math.sin(a)) * radius;
+    points.add(exitPoint);
+  }
+  final radial = exitPoint - center;
+  final radialLen = radial.distance;
+  final radialUnit = radialLen > 0.0001 ? radial / radialLen : fwd;
+  final exitTangent = Offset(-radialUnit.dy, radialUnit.dx) * side;
+  return _ArcResult(points: points, exitPoint: exitPoint, exitTangent: exitTangent);
+}
+
+/// Bazı uçaklar için düz gitmek yerine: düz bir giriş, ardından bir noktada
+/// çembersel bir dönüş ([_buildArc]), sonra dönüşün gerçekten bıraktığı
+/// yeni yönde düz bir devam — ekran kesri uzayında, tek bir sürekli nokta
+/// dizisi olarak.
+///
+/// [sweepFraction] dönüşün ne kadarının alınacağını belirler. Tam turun
+/// girişteki ve çıkıştaki teğet açısı matematiksel olarak birebir aynıdır —
+/// yani tam tur uçağın yönünü hiç değiştirmez, sadece dekoratif bir
+/// döngüdür. Çeyrek tur yönü tam 90°, yarım tur tam 180° çevirir. Önceki
+/// sürüm döngüden sonra bağımsız rastgele bir noktaya yöneliyordu; bu da
+/// (özellikle tam turda) döngünün bıraktığı teğetle uyuşmayan, "uçak
+/// keskin döndü" hissi veren bir kırılma yaratıyordu — burada çıkış yönü
+/// doğrudan döngünün son teğetinden hesaplanıp [_rayExitDistance] ile ekran
+/// dışına kadar uzatılır, böylece döngü öncesi/sonrası tüm geçişler teğet-
+/// sürekli kalır. Düz-çembere ve çember-düze geçişteki köşeler yine
+/// [_chaikinSmooth] ile yumuşatılır.
+List<Offset> _buildCurvedRoutePoints(
+  Offset start,
+  Offset loopEntry,
+  math.Random rnd, {
+  required double sweepFraction,
+}) {
   final points = <Offset>[];
   const straightSteps = 10;
   for (var i = 0; i <= straightSteps; i++) {
@@ -254,21 +333,313 @@ List<Offset> _buildCurvedRoutePoints(Offset start, Offset loopEntry, Offset end,
   final into = loopEntry - start;
   final intoLen = into.distance;
   final fwd = intoLen > 0.0001 ? into / intoLen : const Offset(1, 0);
-  final perp = Offset(-fwd.dy, fwd.dx);
   final loopRadius = 0.06 + rnd.nextDouble() * 0.05;
   final side = rnd.nextBool() ? 1.0 : -1.0;
-  final loopCenter = loopEntry + perp * loopRadius * side;
-  const loopSteps = 40;
-  final startAngle = (loopEntry - loopCenter).direction;
-  final sweep = 2 * math.pi * side;
-  for (var i = 1; i <= loopSteps; i++) {
-    final a = startAngle + sweep * i / loopSteps;
-    points.add(loopCenter + Offset(math.cos(a), math.sin(a)) * loopRadius);
-  }
+  final arc = _buildArc(
+    entryPoint: loopEntry,
+    entryTangent: fwd,
+    radius: loopRadius,
+    sweepFraction: sweepFraction,
+    side: side,
+  );
+  points.addAll(arc.points);
+  final exitDistance = _rayExitDistance(arc.exitPoint, arc.exitTangent);
+  final end = arc.exitPoint + arc.exitTangent * exitDistance;
   for (var i = 1; i <= straightSteps; i++) {
-    points.add(Offset.lerp(loopEntry, end, i / straightSteps)!);
+    points.add(Offset.lerp(arc.exitPoint, end, i / straightSteps)!);
   }
   return _chaikinSmooth(points, iterations: 2);
+}
+
+/// Periyodik gösterideki (bkz. _triggerShow) bir uçağın paylaşılan [0,1]
+/// zaman çizelgesi içindeki kendi giriş/icra/çıkış sınırları.
+class _ShowTiming {
+  final double approachStart;
+  final double approachEnd;
+  final double performEnd;
+  final double exitEnd;
+  const _ShowTiming({
+    required this.approachStart,
+    required this.approachEnd,
+    required this.performEnd,
+    required this.exitEnd,
+  });
+}
+
+/// Gösterideki [count] uçaktan [index]'incisine, hepsinin paylaştığı [0,1]
+/// zaman çizelgesi içinde kendi giriş/icra/çıkış aralığını verir. Uçaklar
+/// aynı anda değil, index'e göre kademeli olarak girişe başlar — "dışarıdan
+/// sıra sıra gelme" etkisi böyle elde edilir. İcra (perform) süresi
+/// [performDur] her uçak için AYNIDIR, sadece başlama zamanı kayar; böylece
+/// hiçbir uçak diğerinden belirgin şekilde hızlı/yavaş hareket etmez.
+_ShowTiming _showTimingFor(int index, int count) {
+  const entryDur = 0.14;
+  const performDur = 0.45;
+  const exitDur = 0.12;
+  final spread = (1.0 - entryDur - performDur - exitDur).clamp(0.0, 1.0);
+  final gap = count > 1 ? spread / (count - 1) : 0.0;
+  final approachStart = gap * index;
+  return _ShowTiming(
+    approachStart: approachStart,
+    approachEnd: approachStart + entryDur,
+    performEnd: approachStart + entryDur + performDur,
+    exitEnd: approachStart + entryDur + performDur + exitDur,
+  );
+}
+
+/// [_ShowTiming]'e göre bir uçağın anlık konumu: [timing.approachStart]'a
+/// kadar hâlâ ekran dışındaki [entryFrom] noktasında bekler (görünmez),
+/// sonra [performPos]'un başına doğru düz uçarak "girer", icra penceresi
+/// boyunca [performPos]'u izler, son olarak [performPos]'un sonundan
+/// ekran dışındaki [exitTo]'ya doğru düz uçarak "çıkar". Bu, tüm gösteri
+/// türlerinin (ay yıldız / kanat açılımı / DNA) ortak iskeletidir —
+/// önceki sürümde uçaklar gösteri başlarken doğrudan rotanın üzerine
+/// ışınlanıyordu; artık her geçiş ekran dışından gelen/giden düz bir
+/// uçuşla yumuşatılır.
+Offset _piecewiseShowPos({
+  required double t,
+  required _ShowTiming timing,
+  required Offset entryFrom,
+  required Offset Function(double localT) performPos,
+  required Offset exitTo,
+}) {
+  if (t <= timing.approachStart) return entryFrom;
+  if (t < timing.approachEnd) {
+    final lt = (t - timing.approachStart) / (timing.approachEnd - timing.approachStart);
+    return Offset.lerp(entryFrom, performPos(0), lt)!;
+  }
+  if (t < timing.performEnd) {
+    final lt = (t - timing.approachEnd) / (timing.performEnd - timing.approachEnd);
+    return performPos(lt);
+  }
+  if (t < timing.exitEnd) {
+    final lt = (t - timing.performEnd) / (timing.exitEnd - timing.performEnd);
+    return Offset.lerp(performPos(1), exitTo, lt)!;
+  }
+  return exitTo;
+}
+
+/// Bir gösteri uçağının konum fonksiyonunu ([_PosFn]) kendi [_ShowTiming]'i
+/// ile birlikte taşır — [_triggerShow] bunları hem [_PlaneRoute.showPos]
+/// hem de izin çizileceği [showTrailStart, showTrailEnd] aralığını
+/// belirlemek için kullanır.
+class _ShowPlane {
+  final _PosFn pos;
+  final _ShowTiming timing;
+  const _ShowPlane({required this.pos, required this.timing});
+}
+
+/// Gösteri türü: "ay yıldız" (Türk bayrağı hattını birlikte çizerler),
+/// "kanat açılımı" (yan yana uçup ortada sağa/sola ayrılırlar) veya "DNA"
+/// (iki iç içe geçmiş dalga şeridi). Her 10 dakikada bir bunlardan biri
+/// rastgele seçilir (bkz. _triggerShow) — böylece gösteri hep aynı
+/// olmaz.
+enum _ShowKind { flag, wedge, dna }
+
+/// "Ay yıldız" gösterisi: her uçak, hattın kendi payına düşen
+/// [flagTStart, flagTEnd] parçasını çizer (bkz. _buildFlagUnitPoints).
+List<_ShowPlane> _buildFlagShowPosFns(math.Random rnd, int count) {
+  // Bu arka plan tüm ekranların arkasında çalışır; Gökyüzü sekmesindeki
+  // saat widget'ı ekranın üst-orta bölgesini (~y 0.2-0.45) kapladığı için
+  // merkez o bölgenin altına, alt gezinme çubuğunun üstünde kalan boş
+  // alana kaydırılır — bayrak artık saatle çakışıp "arkasında kalmaz".
+  final flagCenter = Offset(0.28 + rnd.nextDouble() * 0.3, 0.6 + rnd.nextDouble() * 0.14);
+  const flagScale = 0.14;
+  return [
+    for (var i = 0; i < count; i++) _buildOneFlagPosFn(rnd, i, count, flagCenter, flagScale),
+  ];
+}
+
+_ShowPlane _buildOneFlagPosFn(
+  math.Random rnd,
+  int i,
+  int count,
+  Offset flagCenter,
+  double flagScale,
+) {
+  final timing = _showTimingFor(i, count);
+  final tStart = i / count;
+  final tEnd = (i + 1) / count;
+  final entryFrom = _offscreenPoint(rnd);
+  final exitTo = _offscreenPoint(rnd);
+  Offset performPos(double lt) {
+    final globalT = tStart + lt.clamp(0.0, 1.0) * (tEnd - tStart);
+    return _flagPoint(globalT, flagCenter, flagScale);
+  }
+
+  return _ShowPlane(
+    timing: timing,
+    pos: (t) => _piecewiseShowPos(
+          t: t,
+          timing: timing,
+          entryFrom: entryFrom,
+          performPos: performPos,
+          exitTo: exitTo,
+        ),
+  );
+}
+
+/// "Kanat açılımı" (SoloTürk) gösterisi — herhangi bir uçak sayısı [count]
+/// (>= 6) ile çalışır: hepsi yukarıdan yan yana (aynı satırda, farklı
+/// x'lerde) süzülerek iner; bir kırılma noktasında MERKEZE en yakın
+/// uçak(lar) (tek [count]'ta 1, çift [count]'ta 2 tane) dönüş yapmadan düz
+/// yoluna devam eder, geri kalanlar kendi tarafına (soldakiler sola,
+/// sağdakiler sağa) çembersel bir dönüş yapar. Dönüş yarıçapı merkeze
+/// yakından kenara doğru KÜÇÜLÜR — yani merkeze en yakın dönen uçaklar en
+/// geniş çemberi çizer, en dıştakiler daha küçük (ama yine de geniş) bir
+/// çember çizer — bkz. [_buildArc]. Sonra hepsi dönüşün bıraktığı yönde
+/// ekran dışına çıkar.
+List<_ShowPlane> _buildWedgeShowPosFns(math.Random rnd, int count) {
+  final centerX = 0.35 + rnd.nextDouble() * 0.3;
+  final breakY = 0.28 + rnd.nextDouble() * 0.12;
+  final centerIndex = (count - 1) / 2;
+  final distances = [for (var i = 0; i < count; i++) (i - centerIndex).abs()];
+  final minD = distances.reduce(math.min);
+  final turningDistances = distances.where((d) => d - minD > 0.01).toList();
+  final turnMinD = turningDistances.isEmpty ? minD : turningDistances.reduce(math.min);
+  final turnMaxD = turningDistances.isEmpty ? minD : turningDistances.reduce(math.max);
+  return [
+    for (var i = 0; i < count; i++)
+      _buildOneWedgePosFn(i, count, centerX, breakY, centerIndex, minD, turnMinD, turnMaxD),
+  ];
+}
+
+_ShowPlane _buildOneWedgePosFn(
+  int i,
+  int count,
+  double centerX,
+  double breakY,
+  double centerIndex,
+  double minD,
+  double turnMinD,
+  double turnMaxD,
+) {
+  final timing = _showTimingFor(i, count);
+  const laneGap = 0.05;
+  final laneOffset = (i - centerIndex) * laneGap;
+  final laneX = centerX + laneOffset;
+  final formationStart = Offset(laneX, -0.15);
+  final breakPoint = Offset(laneX, breakY);
+  // Girişi biçim hattıyla aynı x'te, biraz gerisinde tutarak yön kırılması
+  // olmadan (teğet-sürekli) satıra "katılmasını" sağlar.
+  final entryFrom = Offset(laneX, -0.3);
+  const fwd = Offset(0, 1);
+  final d = (i - centerIndex).abs();
+
+  if (d - minD < 0.01) {
+    // Merkeze en yakın uçak(lar): dönüş yapmadan düz yoluna devam eder.
+    final farDist = _rayExitDistance(breakPoint, fwd);
+    final farEnd = breakPoint + fwd * farDist;
+    return _ShowPlane(
+      timing: timing,
+      pos: (t) => _piecewiseShowPos(
+            t: t,
+            timing: timing,
+            entryFrom: entryFrom,
+            performPos: (lt) => Offset.lerp(formationStart, farEnd, lt)!,
+            exitTo: farEnd,
+          ),
+    );
+  }
+
+  final isRight = laneOffset > 0;
+  final side = isRight ? -1.0 : 1.0; // -1 sağa, +1 sola kıvrılır (bkz. _buildArc)
+  final turnSpan = (turnMaxD - turnMinD).abs() > 0.01 ? (turnMaxD - turnMinD) : 1.0;
+  // 0 = merkeze en yakın dönen uçak (en geniş çember), 1 = en dıştaki (daha dar).
+  final tOutward = ((d - turnMinD) / turnSpan).clamp(0.0, 1.0);
+  const radiusNear = 0.22;
+  const radiusFar = 0.14;
+  const sweepNear = 0.85;
+  const sweepFar = 0.75;
+  final radius = radiusNear + (radiusFar - radiusNear) * tOutward;
+  final sweepFraction = sweepNear + (sweepFar - sweepNear) * tOutward;
+  final arc = _buildArc(
+    entryPoint: breakPoint,
+    entryTangent: fwd,
+    radius: radius,
+    sweepFraction: sweepFraction,
+    side: side,
+  );
+  final exitDist = _rayExitDistance(arc.exitPoint, arc.exitTangent);
+  final farEnd = arc.exitPoint + arc.exitTangent * exitDist;
+  final path = _PolylinePath(
+    _chaikinSmooth([formationStart, breakPoint, ...arc.points, farEnd], iterations: 2),
+  );
+
+  return _ShowPlane(
+    timing: timing,
+    pos: (t) => _piecewiseShowPos(
+          t: t,
+          timing: timing,
+          entryFrom: entryFrom,
+          performPos: (lt) => path.pointAt(lt),
+          exitTo: farEnd,
+        ),
+  );
+}
+
+/// "DNA" gösterisi: uçaklar iki gruba ayrılır (çift/tek index), her grup
+/// ekranı yatay olarak baştan sona geçen bir sinüs dalgası izler; iki
+/// grubun dalgaları birbirinin aynası (180° faz farkı) olduğu için iki
+/// şerit birbirine sarmalanmış bir DNA sarmalı gibi görünür. Aynı gruptaki
+/// uçaklar dalga boyunca eşit aralıklarla dizilir (faz kayması ile),
+/// böylece o an tek bir noktada üst üste binmezler. Uçak sayısı tek ise
+/// (örn. 5) iki şerit eşit büyüklükte olmaz — her uçağın faz hesabı kendi
+/// şeridinin GERÇEK boyutunu kullanır (bkz. [strandACount]/[strandBCount]),
+/// aksi halde eşit olmayan şeritlerde fazlar birbirine çakışırdı.
+List<_ShowPlane> _buildDnaShowPosFns(math.Random rnd, int count) {
+  // Tamamen rastgele dikey konum — ay yıldızla artık aynı anda değil,
+  // sırayla (birer birer) çalıştığı için sabit bir bölgeye hapsedilmesine
+  // gerek yok (bkz. _triggerShow).
+  final centerY = 0.32 + rnd.nextDouble() * 0.3;
+  const amplitude = 0.09;
+  const cycles = 1.6;
+  final strandACount = count - count ~/ 2;
+  final strandBCount = count ~/ 2;
+  return [
+    for (var i = 0; i < count; i++)
+      _buildOneDnaPosFn(i, count, centerY, amplitude, cycles, strandACount, strandBCount),
+  ];
+}
+
+_ShowPlane _buildOneDnaPosFn(
+  int i,
+  int count,
+  double centerY,
+  double amplitude,
+  double cycles,
+  int strandACount,
+  int strandBCount,
+) {
+  final timing = _showTimingFor(i, count);
+  final strandSign = i.isEven ? 1.0 : -1.0;
+  final withinStrand = i ~/ 2;
+  final perStrand = i.isEven ? strandACount : strandBCount;
+  final phaseX = perStrand > 0 ? withinStrand / perStrand / cycles : 0.0;
+
+  double yAt(double x) =>
+      centerY + strandSign * amplitude * math.sin(2 * math.pi * cycles * (x - phaseX));
+
+  const xStart = -0.12;
+  const xEnd = 1.12;
+  final entryFrom = Offset(xStart - 0.15, yAt(xStart));
+  final exitTo = Offset(xEnd + 0.15, yAt(xEnd));
+
+  Offset performPos(double lt) {
+    final x = xStart + lt.clamp(0.0, 1.0) * (xEnd - xStart);
+    return Offset(x, yAt(x));
+  }
+
+  return _ShowPlane(
+    timing: timing,
+    pos: (t) => _piecewiseShowPos(
+          t: t,
+          timing: timing,
+          entryFrom: entryFrom,
+          performPos: performPos,
+          exitTo: exitTo,
+        ),
+  );
 }
 
 class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
@@ -277,6 +648,7 @@ class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
   late final List<_PlaneRoute> _routes;
   late final List<AnimationController> _controllers;
   Timer? _showTimer;
+  _ShowKind? _lastShowKind;
 
   @override
   void initState() {
@@ -289,7 +661,7 @@ class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
   }
 
   /// Günün her saatinde, her 10 dakikada bir (:00, :10, :20, ...) SoloTürk
-  /// gösterisi gibi bir "ay yıldız" gösterisi tetikler — bkz. [_triggerShow].
+  /// gösterisi gibi rastgele bir görsel şölen tetikler — bkz. [_triggerShow].
   /// Süresi dolan uçak zaten [_makeController] içindeki dinleyici sayesinde
   /// normal rastgele rotaya döner, bu yüzden gösteri sonrası ekstra bir
   /// temizliğe gerek yoktur.
@@ -302,27 +674,48 @@ class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
     _showTimer = Timer(next.difference(now), _triggerShow);
   }
 
-  /// Tüm uçaklar aynı tek noktada üst üste binmesin diye, "ay yıldız"
-  /// rotası uçak sayısı kadar eşit parçaya bölünür ve her uçağa kendi
-  /// [flagTStart, flagTEnd] aralığı atanır — hepsi aynı anda başlar ama
-  /// hattın farklı bir noktasından, birlikte tüm şekli tamamlarlar.
+  /// Her seferinde [_enabledShowKinds]'ten TEK bir tür rastgele seçilir —
+  /// bir önceki gösteriyle AYNI tür arka arkaya iki kez gelmez (bkz.
+  /// [_lastShowKind]). DNA'nın konumu tamamen rastgele (bkz.
+  /// _buildDnaShowPosFns); ay yıldız ekranın alt-orta bölgesinde kalır
+  /// (bkz. _buildFlagShowPosFns) ki Gökyüzü sekmesindeki saatle çakışmasın.
+  /// Katılımcı sayısı ekrandaki TÜM uçaklar (`_routes.length`, en az 6) —
+  /// hiçbiri dışarıda bırakılmaz. [_ShowKind.wedge] (kanat açılımı)
+  /// kullanıcı isteğiyle geçici olarak devre dışı — kodu silinmedi, tekrar
+  /// açmak için bu listeye eklemek yeterli. Her uçağın konumu
+  /// [_showTimingFor] ile kademeli (sıra sıra) bir giriş + ortak icra +
+  /// çıkış içeren TEK bir fonksiyona (bkz. [_ShowPlane]) bağlanır — önceki
+  /// sürümde uçaklar gösteri başlarken bulundukları yerden doğrudan
+  /// rotanın üzerine ışınlanıyordu; artık hepsi ekran dışından uçarak
+  /// "girer". İz de sadece icra aralığında ([_ShowTiming.approachEnd]..
+  /// [_ShowTiming.performEnd]) çizilir (bkz. [_PlaneRoute.showTrailStart]/
+  /// [showTrailEnd], [_ShowTrailPainter]) — giriş/çıkış uçuşları iz
+  /// bırakmaz.
+  static const _enabledShowKinds = [_ShowKind.flag, _ShowKind.dna];
+
   void _triggerShow() {
     if (!mounted) return;
-    final flagCenter = Offset(0.3 + _rnd.nextDouble() * 0.25, 0.32 + _rnd.nextDouble() * 0.24);
-    const flagScale = 0.16;
     const showDurationSeconds = 28;
     final segmentCount = _routes.length;
+    final options = _enabledShowKinds.where((k) => k != _lastShowKind).toList();
+    final kind = options[_rnd.nextInt(options.length)];
+    _lastShowKind = kind;
+    debugPrint('[gösteri] $kind tetiklendi (${DateTime.now()})');
+    final planes = switch (kind) {
+      _ShowKind.flag => _buildFlagShowPosFns(_rnd, segmentCount),
+      _ShowKind.wedge => _buildWedgeShowPosFns(_rnd, segmentCount),
+      _ShowKind.dna => _buildDnaShowPosFns(_rnd, segmentCount),
+    };
     setState(() {
-      for (var i = 0; i < _routes.length; i++) {
+      for (var i = 0; i < segmentCount; i++) {
         _routes[i] = _PlaneRoute(
           kind: _routes[i].kind,
           size: _routes[i].size,
           durationSeconds: showDurationSeconds,
-          mode: _RouteMode.flag,
-          flagCenter: flagCenter,
-          flagScale: flagScale,
-          flagTStart: i / segmentCount,
-          flagTEnd: (i + 1) / segmentCount,
+          mode: _RouteMode.show,
+          showPos: planes[i].pos,
+          showTrailStart: planes[i].timing.approachEnd,
+          showTrailEnd: planes[i].timing.performEnd,
         );
         _controllers[i].duration = const Duration(seconds: showDurationSeconds);
         _controllers[i].forward(from: 0);
@@ -382,16 +775,23 @@ class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
     } while ((end - start).distance < 0.5);
 
     // Uçakların bir kısmı (tamamı değil) düz gitmek yerine yolun bir
-    // noktasında çembersel bir dönüş yapıp tamamen farklı bir yöne devam
-    // eder — hepsi aynı düz güzergahı izlemesin diye.
+    // noktasında çembersel bir dönüş yapıp döngünün bıraktığı yeni yönde
+    // devam eder — hepsi aynı düz güzergahı izlemesin diye. Dönüş miktarı
+    // (çeyrek/yarım/tam tur) her seferinde rastgele seçilir, böylece üç
+    // türü de yapan uçaklar birlikte görülür (bkz. _buildCurvedRoutePoints).
     if (_rnd.nextDouble() < 0.3) {
       final loopEntry = Offset(0.2 + _rnd.nextDouble() * 0.6, 0.2 + _rnd.nextDouble() * 0.6);
+      const sweepOptions = [0.25, 0.5, 1.0];
+      final sweepFraction = sweepOptions[_rnd.nextInt(sweepOptions.length)];
       return _PlaneRoute(
         kind: kind,
         size: size,
-        durationSeconds: durationSeconds + 6, // döngü için biraz daha uzun sürsün
+        // Dönüş ne kadar büyükse gösteri o kadar uzun sürsün.
+        durationSeconds: durationSeconds + math.max(2, (sweepFraction * 6).round()),
         mode: _RouteMode.curved,
-        curvedPath: _PolylinePath(_buildCurvedRoutePoints(start, loopEntry, end, _rnd)),
+        curvedPath: _PolylinePath(
+          _buildCurvedRoutePoints(start, loopEntry, _rnd, sweepFraction: sweepFraction),
+        ),
       );
     }
 
@@ -463,17 +863,21 @@ class _FlightTrailsBackgroundState extends State<FlightTrailsBackground>
         pos = _heartPoint(t, center, scalePx);
         angle = _heartAngle(t, center, scalePx);
         trailPainter = _HeartTrailPainter(center: center, scale: scalePx, currentT: t, color: trailColor);
-      case _RouteMode.flag:
-        final center = Offset(route.flagCenter.dx * size.width, route.flagCenter.dy * size.height);
-        final scalePx = route.flagScale * math.min(size.width, size.height);
-        final globalT = route.flagTStart + t * (route.flagTEnd - route.flagTStart);
-        pos = _flagPoint(globalT, center, scalePx);
-        angle = _flagAngle(globalT, center, scalePx);
-        trailPainter = _FlagTrailPainter(
-          center: center,
-          scale: scalePx,
-          tStart: route.flagTStart,
-          currentT: globalT,
+      case _RouteMode.show:
+        final fn = route.showPos!;
+        final local = fn(t);
+        pos = Offset(local.dx * size.width, local.dy * size.height);
+        const eps = 0.006;
+        final l1 = fn((t - eps).clamp(0.0, 1.0));
+        final l2 = fn((t + eps).clamp(0.0, 1.0));
+        final p1 = Offset(l1.dx * size.width, l1.dy * size.height);
+        final p2 = Offset(l2.dx * size.width, l2.dy * size.height);
+        angle = (p2 - p1).direction;
+        trailPainter = _ShowTrailPainter(
+          posFn: fn,
+          currentT: t,
+          trailStart: route.showTrailStart,
+          trailEnd: route.showTrailEnd,
           color: trailColor,
         );
       case _RouteMode.curved:
@@ -623,27 +1027,31 @@ class _HeartTrailPainter extends CustomPainter {
       oldDelegate.center != center;
 }
 
-/// Gösteri sırasında uçağın kendi [tStart]'tan [currentT]'ye kadar
-/// "çizdiği" ay yıldız parçasını gösterir — düz, kalın bir gösteri/duman
-/// izi (kesikli değil). Her uçak sadece kendi parçasını çizer (bkz.
-/// _triggerShow), birlikte tüm şekli tamamlarlar.
-class _FlagTrailPainter extends CustomPainter {
-  final Offset center;
-  final double scale;
-  final double tStart;
+/// Periyodik gösterideki bir uçağın SADECE icra aralığında ([trailStart]..
+/// [trailEnd]) aldığı yolu düz, kalın bir gösteri/duman izi olarak çizer
+/// (kesikli değil) — bkz. [_piecewiseShowPos]. Giriş ve çıkış uçuşları
+/// (ekran dışından gelen/giden düz parçalar) kasıtlı olarak İZ BIRAKMAZ —
+/// aksi halde örn. ay yıldız gösterisinde her uçağın kendi rastgele
+/// giriş/çıkış çizgisi şeklin etrafında karmaşa yaratır, tam bayrak
+/// görünmez olurdu.
+class _ShowTrailPainter extends CustomPainter {
+  final _PosFn posFn;
   final double currentT;
+  final double trailStart;
+  final double trailEnd;
   final Color color;
-  const _FlagTrailPainter({
-    required this.center,
-    required this.scale,
-    required this.tStart,
+  const _ShowTrailPainter({
+    required this.posFn,
     required this.currentT,
+    required this.trailStart,
+    required this.trailEnd,
     required this.color,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (currentT - tStart <= 0.001) return;
+    final drawEnd = math.min(currentT, trailEnd);
+    if (drawEnd - trailStart <= 0.001) return;
     final paint = Paint()
       ..color = color
       ..strokeWidth = 2.2
@@ -651,23 +1059,44 @@ class _FlagTrailPainter extends CustomPainter {
       ..strokeJoin = StrokeJoin.round
       ..style = PaintingStyle.stroke;
     const steps = 260;
-    final startStep = (steps * tStart).floor();
-    final maxStep = (steps * currentT).ceil();
-    Offset? prev;
-    for (var i = startStep; i <= maxStep; i++) {
-      final p = _flagPoint(i / steps, center, scale);
-      if (prev != null) {
-        canvas.drawLine(prev, p, paint);
+    final startStep = (steps * trailStart).floor();
+    final maxStep = (steps * drawEnd).ceil();
+    if (maxStep <= startStep) return;
+
+    final pts = <Offset>[
+      for (var i = startStep; i <= maxStep; i++) _scaledPos(i / steps, size),
+    ];
+    if (pts.length < 2) return;
+
+    // Bazı şekiller (örn. ay yıldız: hilal + yıldız) altta yatan noktalar
+    // dizisinde birbirine görsel olarak BAĞLI olmayan iki ayrı parça
+    // içerir — aradaki "dikiş" tek bir çok uzun düz sıçrama olarak
+    // örneklenir. Ardışık noktalar arasındaki tipik (medyan) adımdan çok
+    // daha uzun olan segmentleri "kalem kalktı" sayıp çizmeyerek bu
+    // sahte bağlantı çizgisini gizleriz.
+    final dists = [for (var i = 1; i < pts.length; i++) (pts[i] - pts[i - 1]).distance];
+    final sorted = [...dists]..sort();
+    final median = sorted[sorted.length ~/ 2];
+    final jumpThreshold = math.max(median * 6, 3.0);
+
+    for (var i = 1; i < pts.length; i++) {
+      if (dists[i - 1] <= jumpThreshold) {
+        canvas.drawLine(pts[i - 1], pts[i], paint);
       }
-      prev = p;
     }
   }
 
+  Offset _scaledPos(double t, Size size) {
+    final local = posFn(t);
+    return Offset(local.dx * size.width, local.dy * size.height);
+  }
+
   @override
-  bool shouldRepaint(covariant _FlagTrailPainter oldDelegate) =>
+  bool shouldRepaint(covariant _ShowTrailPainter oldDelegate) =>
       oldDelegate.currentT != currentT ||
       oldDelegate.color != color ||
-      oldDelegate.center != center;
+      oldDelegate.trailStart != trailStart ||
+      oldDelegate.trailEnd != trailEnd;
 }
 
 /// Eğrisel/çembersel rota modundaki uçağın o ana kadar aldığı yolu,
